@@ -1,0 +1,60 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "eslint-config-airbnb-base",
+    "eslint-config-airbnb-base/rules/strict",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "babel",
+    "promise",
+    "jest"
+  ],
+  "env": {
+    "es6": true,
+    "browser" : true,
+    "commonjs": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "jsx": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "quotes": ["error", "double", { "avoidEscape": true }],
+    "import/prefer-default-export": 0,
+    "array-callback-return": 0,
+    "camelcase": 0,
+    "class-methods-use-this": ["error", {
+      "exceptMethods": [
+        "render",
+        "getInitialState",
+        "getDefaultProps",
+        "getChildContext",
+        "componentWillMount",
+        "componentDidMount",
+        "UNSAFE_componentWillReceiveProps",
+        "shouldComponentUpdate",
+        "componentWillUpdate",
+        "componentDidUpdate",
+        "componentWillUnmount"
+      ]
+    }],
+    "react/display-name": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    }
+  }
+}

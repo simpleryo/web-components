@@ -1,0 +1,91 @@
+/* ------------------------------------------------- */
+// Stylesheet for Progress bar
+/* ------------------------------------------------- */
+
+// Normal style
+.ant-progress {
+  @extend p;
+  line-height: 1.5;
+  &-bg {
+    background-color: $pink;
+    border-radius: 0;
+  }
+  &-inner {
+    border-radius: 0;
+  }
+  &-text {
+    color: $black;
+    // width: 45px; // FIXME: the width will cause the text starts with new line
+    @include responsive-to("mobile") {
+      //width: 35px;
+    }
+  }
+  &.ant-progress-show-info {
+    .ant-progress-outer {
+      padding-right: calc(45px + 8px);
+      margin-right: calc(-45px - 8px);
+      @include responsive-to("mobile") {
+        padding-right: calc(35px + 8px);
+        margin-right: calc(-35px - 8px);
+      }
+    }
+    /*.ant-progress-text {
+      width: 45px;
+      @include responsive-to("mobile") {
+        width: 35px;
+      }
+    }*/
+  }
+
+  .ant-progress-status-active .ant-progress-bg:before {
+    border-radius: 0;
+  }
+
+  // Circle style
+  .ant-progress-circle .ant-progress-text {
+    font-family: inherit;
+  }
+
+  .ant-progress-circle-path {
+    stroke: $pink;
+  }
+
+  .ant-progress-status-success {
+    .ant-progress-bg {
+      background-color: $green;
+    }
+    .ant-progress-text {
+      color: $green;
+    }
+  }
+
+  .ant-progress-status-exception {
+    .ant-progress-bg {
+      background-color: $pink;
+    }
+    .ant-progress-text {
+      color: $pink;
+    }
+  }
+
+  // icon font update
+  .anticon-check {
+    &:before {
+      font-family: "fontello" !important;
+      content: "\E828";
+    }
+    &-circle {
+      &:before {
+        font-family: "fontello" !important;
+        content: "\E817";
+      }
+    }
+  }
+
+  .anticon-cross-circle {
+    &:before {
+      font-family: "fontello" !important;
+      content: "\E88D";
+    }
+  }
+}

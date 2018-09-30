@@ -1,0 +1,162 @@
+/* ------------------------------------------------- */
+// Stylesheet for Radio button and checkbox
+/* ------------------------------------------------- */
+
+//Normalize checkbox & radio style customised
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0;
+}
+
+//Ant radio button
+.ant-radio {
+  &-inner {
+    border-radius: 50%;
+    &:after {
+      width: 14px;
+      height: 14px;
+      left: 6px;
+      top: 6px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.ant-radio-wrapper {
+  & {
+    @extend .font--weight-light;
+    color: $black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    @include responsive-to('mobile') {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+  .ant-radio {
+    vertical-align: middle;
+  }
+  span.ant-radio + * {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.form-group .ant-radio-wrapper {
+  margin-bottom: 0;
+}
+
+.ant-radio-group {
+  .ant-radio-wrapper {
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+
+  //Radio vertical style
+  &.vertical-list {
+    .ant-radio-wrapper {
+      & {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      //&:last-child {
+      //  margin-bottom: 0;
+      //}
+      .ant-radio {
+        vertical-align: top;
+      }
+      span.ant-radio + * {
+        white-space: initial;
+        width: calc(100% - 28px);
+      }
+    }
+  }
+}
+
+//Radio error style
+.ant-radio-wrapper,
+.ant-radio-group {
+  &.has-error {
+    & {
+      color: $active-red;
+    }
+    .ant-radio-inner,
+    .ant-radio-wrapper:hover .ant-radio .ant-radio-inner,
+    .ant-radio:hover .ant-radio-inner,
+    .ant-radio-focused .ant-radio-inner {
+      border-color: $active-red !important;
+    }
+    .ant-radio-inner:after {
+      background-color: $active-red;
+    }
+    .ant-radio-checked:after {
+      border-color: $active-red;
+    }
+  }
+}
+
+
+//Ant checkbox
+.ant-checkbox-wrapper {
+  @extend label;
+
+  .ant-checkbox {
+    vertical-align: middle;
+  }
+  .ant-checkbox-wrapper + span,
+  .ant-checkbox + span {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.form-group .check-all.ant-checkbox-wrapper {
+  margin-bottom: 10px;
+}
+
+.ant-checkbox-group .ant-checkbox-wrapper {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+//Checkbox vertical style
+.ant-checkbox-group.vertical-list {
+  .ant-checkbox-group-item {
+    width: 100%;
+    margin-bottom: 10px;
+    //&:last-child {
+    //  margin-bottom: 0;
+    //}
+  }
+  .ant-checkbox-wrapper .ant-checkbox-wrapper + span,
+  .ant-checkbox-wrapper .ant-checkbox + span {
+    width: calc(100% - 28px);
+  }
+  .ant-checkbox-wrapper .ant-checkbox {
+    vertical-align: top;
+    margin-top: 3px;
+  }
+}
+
+//Checkbox error style
+.ant-checkbox-wrapper,
+.ant-checkbox-group {
+  &.has-error {
+    color: $active-red;
+    .ant-checkbox {
+      .ant-checkbox-inner,
+      &:hover .ant-checkbox-input {
+        border: 1px solid $active-red;
+      }
+      &-checked .ant-checkbox-inner,
+      &-indeterminate .ant-checkbox-inner {
+        background: $active-red;
+      }
+    }
+  }
+}

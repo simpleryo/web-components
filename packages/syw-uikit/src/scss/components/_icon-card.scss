@@ -1,0 +1,123 @@
+.icon-card {
+  & {
+    text-align: center;
+  }
+  .circle-icon,
+  .status-circle-icon {
+    margin: 0 auto;
+  }
+  .title {
+    margin-top: 20px;
+    @include responsive-to('mobile') {
+      margin-top: 10px;
+    }
+  }
+  p {
+    line-height: normal;
+    margin-top: 10px;
+    &.extra-small {
+      margin-top: inherit;
+    }
+  }
+  img {
+    @include responsive-to('tablet') {
+      width: 110px;
+      height:110px;
+    }
+    @include responsive-to('mobile') {
+      width: 100px;
+      height:100px;
+    }
+  }
+}
+
+.responsive-icon-card {
+  & {
+    display: table;
+    width: 100%;
+    text-align: center;
+    @include responsive-to('mobile') {
+      margin-bottom: 20px;
+    }
+  }
+  &__content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__wrapper{
+    margin-top: 20px;
+    @include responsive-to('mobile') {
+      float: left;
+      display: table;
+      margin-top: inherit;
+      margin-left: 15px;
+      width: calc(100% - 74px);
+      height: 54px;
+    }
+  }
+  &__detail {
+    @include responsive-to('mobile') {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left;
+    }
+    p {
+      line-height: normal;
+      margin-top: 10px;
+      @include responsive-to('mobile') {
+        margin-top: inherit;
+      }
+    }
+  }
+  .circle-icon,
+  .icon-img {
+    @include responsive-to('mobile') {
+      float: left;
+    }
+  }
+  .icon-img {
+    @include responsive-to('mobile') {
+      width: 54px;
+      height: 54px;
+    }
+  }
+}
+
+.vertical-icon-card {
+  & {
+    display: table;
+    width: 100%;
+    text-align: center;
+    @include responsive-to('mobile') {
+      margin-bottom: 20px;
+    }
+  }
+  &__content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__wrapper{
+    margin-top: 20px;
+    float: left;
+    display: table;
+    margin-top: inherit;
+    margin-left: 15px;
+    width: calc(100% - 43px);
+    height: 54px;
+  }
+  &__detail {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    p {
+      line-height: normal;
+    }
+    h6 {
+      line-height: normal;
+      margin-bottom: 5px;
+    }
+  }
+  .circle-icon, i, img {
+    float: left;
+  }
+}

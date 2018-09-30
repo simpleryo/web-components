@@ -1,0 +1,60 @@
+/* ------------------------------------------------- */
+// Stylesheet for Cascader
+/* ------------------------------------------------- */
+
+.ant-cascader-picker {
+  width: 100%;
+  &:focus .ant-cascader-input{
+    box-shadow: none;
+    border-color: $blue;
+  }
+}
+.ant-cascader-picker-label {
+  color: $black;
+}
+.ant-cascader-menus {
+  @media only screen and (max-width: 320px) {
+    width: 260px;
+  }
+  @include responsive-to('mobile') {
+    width: 80%;
+  }
+}
+.ant-cascader-menu {
+  height: 180px !important;
+  @media only screen and (max-width: 320px) {
+    min-width: auto;
+    width: 33.333%;
+  }
+  @include responsive-to('mobile') {
+    min-width: auto;
+    width: 33.333%;
+  }
+}
+.ant-cascader-menu-item {
+  white-space: normal;
+}
+.ant-cascader-menu-item-expand {
+  padding-right: 18px;
+  &:after {
+    font-family: "fontello" !important;
+    content: '\E80B';
+    right: 1px;
+    top: 7px;
+  }
+}
+
+.ant-cascader-picker-arrow {
+  & {
+    width: auto;
+    height: auto;
+  }
+  &:before {
+    font-family: "fontello" !important;
+    content: '\E80D';
+  }
+}
+
+.ant-cascader-picker-clear {
+  right: 12px;
+}

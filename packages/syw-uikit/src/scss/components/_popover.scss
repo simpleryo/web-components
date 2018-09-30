@@ -1,0 +1,104 @@
+/* ------------------------------------------------- */
+// Override popover style
+/* ------------------------------------------------- */
+
+.btn-popover {
+  &:hover {
+    cursor: pointer;
+  }
+  &.circle-icon:hover {
+    background-color: $pink;
+    color: $white;
+  }
+  &.icon-info {
+    font-size: 24px;
+  }
+  &.icon-profile {
+    display: inline-block;
+    line-height: 1;
+    font-size: 32px;
+    &:before {
+      margin: 0;
+    }
+  }
+}
+
+.ant-popover {
+  //&.ant-popover-placement-bottomRight {
+  //  width: 510px;
+  //  @include responsive-to("mobile") {
+  //    width: 80% !important;
+  //  }
+  //}
+  &.dropdown-menu {
+    width: 160px;
+    .ant-popover-inner {
+      .ant-popover-inner-content {
+        padding: 20px 0;
+        color: $black;
+        p {
+          font-size: 14px;
+          line-height: 23px;
+        }
+      }
+    }
+
+    ul.list-unstyled {
+      & {
+        margin: 0;
+      }
+      li {
+        line-height: 1;
+        padding: 0 20px;
+
+        a {
+          color: $black;
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+    .ant-popover-inner-content {
+      padding: 0;
+    }
+  }
+}
+
+.ant-popover-arrow {
+  border-width: 6px;
+  &:after {
+    border-width: 6px;
+  }
+}
+
+.ant-popover-placement-bottomRight > .ant-popover-content > .ant-popover-arrow {
+  right: 15px;
+}
+
+.ant-popover-placement-bottom > .ant-popover-content > .ant-popover-arrow,
+.ant-popover-placement-bottomLeft > .ant-popover-content > .ant-popover-arrow,
+.ant-popover-placement-bottomRight > .ant-popover-content > .ant-popover-arrow {
+  top: 3px;
+  &:after {
+    margin-left: -8px;
+    border-bottom-color: $white;
+  }
+}
+
+.ant-popover-placement-top > .ant-popover-content > .ant-popover-arrow,
+.ant-popover-placement-topLeft > .ant-popover-content > .ant-popover-arrow,
+.ant-popover-placement-topRight > .ant-popover-content > .ant-popover-arrow {
+  border-top-color: $mid-grey;
+  bottom: 0;
+  &:after {
+    margin-left: -8px;
+  }
+}
+
+.ant-popover-placement-top > .ant-popover-content > .ant-popover-arrow,
+.ant-popover-placement-topLeft > .ant-popover-content > .ant-popover-arrow,
+.ant-popover-placement-topRight > .ant-popover-content > .ant-popover-arrow {
+  border-top-color: $white;
+  bottom: 3px;
+}

@@ -1,0 +1,232 @@
+/* ------------------------------------------------- */
+// Typography styles
+/* ------------------------------------------------- */
+
+.font {
+  &--weight-light{
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, sans-serif;
+    font-weight: 300;
+  }
+  &--weight-bold{
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, sans-serif;
+    font-weight: normal;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, p, label, del, ul li {
+  @extend .font--weight-light;
+}
+
+h6, b, strong {
+  @extend .font--weight-bold;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 80px;
+
+  @include responsive-to('tablet') {
+    font-size: 44px;
+    line-height: 60px;
+  }
+
+  @include responsive-to('mobile') {
+    font-size: 32px;
+    line-height: 46px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 66px;
+
+  @include responsive-to('tablet') {
+    font-size: 36px;
+    line-height: 49px;
+  }
+
+  @include responsive-to('mobile') {
+    font-size: 28px;
+    line-height: 41px;
+  }
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 51px;
+
+  @include responsive-to('tablet') {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  @include responsive-to('mobile') {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 42px;
+
+  @include responsive-to('tablet') {
+    font-size: 22px;
+    line-height: 34px;
+  }
+
+  @include responsive-to('mobile') {
+    font-size: 20px;
+    line-height: 31px;
+  }
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 36px;
+
+  @include responsive-to('tablet') {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @include responsive-to('mobile') {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+h6 {
+  font-size: 18px;
+  line-height: 28px;
+
+  @include responsive-to('mobile') {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+p,
+label,
+ul li {
+  font-size: 16px;
+  line-height: 30px;
+  @include responsive-to('mobile') {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+//Normalize style customise
+label {
+  line-height: normal;
+  margin-bottom:0;
+}
+
+span, p {
+  &.large {
+    font-size: 18px;
+    line-height: 34px;
+
+    @include responsive-to('tablet') {
+      font-size: 16px;
+      line-height: 30px;
+    }
+
+    @include responsive-to('mobile') {
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+  &.small {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  &.extra-small {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  &.bold {
+    @extend .font--weight-bold;
+  }
+}
+
+a {
+  color: $blue;
+  &:hover {
+    color: $light-blue;
+    text-decoration: none;
+  }
+  &:focus {
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+.link{
+  &{
+    color: $blue;
+    &:hover {
+      color: $light-blue;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    &:focus {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+  &__deleted {
+    color: $red;
+    &:hover {
+      color: $active-red;
+    }
+  }
+  &__highlight {
+    &{
+      padding: 0 3px;
+      background: $blue;
+      color: $white;
+      margin: 0 3px;
+      &:hover {
+        background: $light-blue;
+        color: $white;
+      }
+      &:focus {
+        color: white;
+        background: $blue;
+      }
+    }
+    &--white  {
+      padding: 0 3px;
+      background: $white;
+      color: $blue;
+      &:hover {
+        background: $light-grey;
+      }
+    }
+  }
+}
+
+ul,
+ol {
+  & {
+    margin-left: 18px;
+    padding: 0;
+  }
+  &.list-unstyled {
+    margin-left: 0;
+  }
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}

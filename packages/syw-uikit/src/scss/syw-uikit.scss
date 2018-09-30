@@ -1,0 +1,49 @@
+// Load bootstrap on demand
+@import "./bootstrap";
+
+// Elements style
+@import "./elements/fontello-icons";
+@import "./elements/responsive";
+@import "./elements/colours";
+@import "./elements/font";
+@import "./elements/typography";
+@import "./elements/space";
+
+// Generic style
+@import "generic";
+
+// Components style
+@import "./components/list-group";
+@import "./components/circle-icons";
+@import "./components/icon-card";
+@import "./components/buttons";
+@import "./components/tabs";
+@import "./components/image-banner";
+@import "./components/app-group";
+@import "./components/arrow";
+@import "./components/modal";
+@import "./components/tooltip";
+@import "./components/popover";
+@import "./components/collapse";
+@import "./components/content-card";
+@import "./components/progress-bar";
+@import "./components/step-progress";
+@import "./components/alert";
+@import "./components/card";
+@import "./components/cascader";
+@import "./components/notification";
+@import "./components/markdown";
+@import "./components/signaturePad";
+@import "./components/promotion-code";
+
+//Form elements
+@import "./components/form-elements";
+@import "./components/select";
+@import "./components/radio-checkbox";
+@import "./components/upload";
+@import "./components/app-card";
+@import "./components/datepick";
+
+// Plugins
+@import "./slick-carousel";
+@import "./react-datepick";

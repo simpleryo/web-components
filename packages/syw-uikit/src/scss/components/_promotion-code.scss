@@ -1,0 +1,51 @@
+$dot-promo: url(~SYW_UIKIT_ASSETS/imgs/dot-promo.svg);
+
+.promotion-code {
+  & {
+    position: relative;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+  &__wrapper {
+    position: relative;
+    height: 90px;
+  }
+  &__discount-panel {
+    background: $pink;
+    display: table;
+    width: 90px;
+    height: 100%;
+    float: left;
+  }
+  .discount-panel--content {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    h5 {
+      font-weight: 400;
+      line-height: 1;
+      text-align: left;
+      display: inline-block;
+    }
+  }
+  &__info-panel {
+    background: $white;
+    display: table;
+    width: calc(100% - 90px);
+    height: 100%;
+    float: left;
+  }
+  .info-panel--content {
+    vertical-align: middle;
+    display: table-cell;
+    padding-left: 15px;
+  }
+  &__dot-line {
+    background: $dot-promo;
+    background-repeat: repeat-y;
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    top: 0;
+    left: 87px;
+  }
+}

@@ -1,0 +1,190 @@
+.ant-tabs {
+  & {
+    @extend .font--weight-light;
+    color: $black;
+  }
+
+  .ant-tabs-content{
+    background: inherit;
+    padding: 40px 0;
+    @include responsive-to('mobile') {
+      padding: 20px 0;
+    }
+  }
+  &.ant-tabs__align-left .ant-tabs-nav-wrap {
+    text-align: left;
+  }
+  .ant-tabs-nav-wrap {
+    text-align: center;
+  }
+  .ant-tabs-tab {
+    & {
+      padding: 20px;
+      @include responsive-to('mobile') {
+        margin-right: 0;
+        padding: 10px 15px;
+        line-height: 30px;
+      }
+    }
+    &:active{
+      @extend .ant-tabs-tab-active;
+    }
+    &:hover {
+      @extend .ant-tabs-tab-active;
+      .status-circle-icon {
+        &--default,
+        &--active,
+        &--completed,
+        &--error {
+          i {
+            background-color: $pink;
+            color: $white;
+          }
+          div {
+            background-color: $light-pink;
+          }
+        }
+      }
+    }
+
+    &-prev-icon {
+      &:before {
+        font-family: "fontello" !important;
+        font-size: 18px;
+        content: "\E80A";
+      }
+    }
+    &-next-icon {
+      &:before {
+        font-family: "fontello" !important;
+        font-size: 18px;
+        content: "\E80B";
+      }
+    }
+    h6 {
+      margin-top: 20px;
+      @include responsive-to('mobile') {
+        margin-top: 10px;
+      }
+    }
+  }
+  .ant-tabs-tab-active {
+    & {
+      color: $pink;
+      font-weight: 300;
+    }
+    i.circle-icon {
+      @extend .bg--pink;
+    }
+  }
+  .ant-tabs-tab-disabled {
+    &:hover {
+      color: rgba(0, 0, 0, 0.25);
+      cursor: not-allowed;
+    }
+    .status-circle-icon.status-circle-icon {
+      i {
+        background-color: $mid-grey;
+        color: $white;
+      }
+      div {
+        background-color: $grey;
+      }
+    }
+  }
+
+  .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+  .ant-tabs-ink-bar {
+    background-color: $pink;
+    height: 4px;
+    @include responsive-to('mobile') {
+      height: 2px;
+    }
+  }
+
+  /* Custom ant-tab style for hiding all tabs by default in services selector container */
+  &.tabs-border-hide .ant-tabs-bar {
+    border-bottom-color: transparent;
+  }
+
+  /* ------------------------------------------------- */
+  // Normal tab - Card style
+  /* ------------------------------------------------- */
+
+  /* White colour on grey background */
+  &.ant-tabs-card {
+    .ant-tabs-bar{
+      border-color: $light-grey;
+      .ant-tabs-nav-container{
+        height: auto;
+      }
+      .ant-tabs-tab {
+        & {
+          font-size: 22px;
+          line-height: 31px;
+          padding: 20px 40px;
+          margin: 0;
+          border: none;
+          background: $light-grey;
+          @include responsive-to('mobile') {
+            font-size: 16px;
+            line-height: 30px;
+            padding: 10px 20px;
+          }
+        }
+      }
+      .ant-tabs-tab-active {
+        background: $white;
+        color: $pink;
+      }
+    }
+    .ant-tabs-content {
+      background: $white;
+    }
+  }
+
+  /* Grey colour on white background */
+  &.ant-tabs-card--grey {
+    .ant-tabs-bar {
+      border-color: $white;
+      .ant-tabs-tab {
+        background: $white;
+      }
+      .ant-tabs-tab-active {
+        color: $black;
+        background: $light-grey;
+      }
+    }
+    .ant-tabs-content{
+      background: $light-grey;
+    }
+  }
+
+  /* Small size style */
+  &.ant-tabs-card--small {
+    .ant-tabs-bar {
+      .ant-tabs-tab {
+        font-size: 16px;
+        line-height: 30px;
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  /* ------------------------------------------------- */
+  // Responsive tab
+  /* ------------------------------------------------- */
+  &-responsive {
+    .ant-tabs-content {
+      padding: 0;
+      @include responsive-to('tablet') {
+        padding: 40px 0;
+      }
+      @include responsive-to('mobile') {
+        padding: 20px 0;
+      }
+    }
+  }
+}

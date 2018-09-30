@@ -1,0 +1,62 @@
+/* ------------------------------------------------- */
+// Stylesheet for Step form title
+/* ------------------------------------------------- */
+
+.app-group-title {
+  & {
+    display: table;
+    width: 100%;
+  }
+  &--margin{
+    margin: 50px 0 20px 0;
+    @include responsive-to('mobile') {
+      margin: 40px 0 20px 0;
+    }
+  }
+  .circle-icon {
+    float: left;
+    @include responsive-to('mobile') {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
+  }
+  &__icon {
+    display: table-cell;
+    vertical-align: top;
+    width: 48px;
+    @include responsive-to('mobile') {
+      width: 36px;
+    }
+  }
+  &__detail {
+    width: calc(100% - 48px);
+    padding-left: 20px;
+    display: table-cell;
+    vertical-align: middle;
+
+    @include responsive-to('mobile') {
+      width: calc(100% - 36px);
+      padding-left: 10px;
+    }
+    &--noIcon {
+      padding-left: inherit;
+    }
+  }
+}
+
+/* ------------------------------------------------- */
+// Stylesheet for Step form group
+/* ------------------------------------------------- */
+
+.app-group {
+  &__fields {
+    margin-left: 53px;
+    @include responsive-to('mobile') {
+      margin-left: 31px;
+    }
+    &--noMargin {
+      margin-left: -15px;
+    }
+  }
+}

@@ -1,0 +1,156 @@
+/* ------------------------------------------------- */
+// Stylesheet for Buttons
+/* ------------------------------------------------- */
+
+.ant-btn {
+  & {
+    @extend .font--weight-light;
+    min-width: 240px;
+    font-size: 24px;
+    line-height: 36px;
+    white-space: nowrap;
+    //padding: 9px 15px;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    @include responsive-to('tablet') {
+      height: 56px;
+      font-size: 20px;
+      line-height: 32px;
+    }
+    @include responsive-to('mobile') {
+      height: 48px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &:hover {
+      color: white;
+      background: $red;
+      border-color: $red;
+    }
+    &:focus {
+      color: $red;
+      background: $white;
+      border-color: $red;
+    }
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+    @include responsive-to('mobile') {
+      font-size: 18px;
+    }
+  }
+
+  &.fit {
+    min-width: inherit;
+  }
+
+  &-primary {
+    & {
+      color: white;
+      background: $pink;
+      border-color: $pink;
+    }
+    &:hover {
+      color: white;
+      background: $red;
+      border-color: $red;
+    }
+    &:focus {
+      color: white;
+      background: $pink;
+      border-color: $pink;
+    }
+  }
+
+  &-sm {
+    min-width: 115px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 1;
+    @include responsive-to('mobile') {
+      a{
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+  }
+
+  &.custom-icon {
+    border: 0;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    background-color: $white;
+  }
+}
+
+.close-btn {
+  & {
+    color: $black;
+    cursor: pointer;
+    display: inline-block;
+  }
+  &:hover,
+  &:focus {
+    color: $black;
+    outline: none;
+  }
+
+  &--big {
+    i {
+      font-size: 30px;
+      @include responsive-to('mobile') {
+        font-size: inherit;
+      }
+    }
+  }
+}
+
+$btn-top--size: 43px;
+$btn-top--wrapper-height: 40px;
+
+.btn-back-top {
+  & {
+    height: $btn-top--wrapper-height;
+    overflow: hidden;
+    @include responsive-to('mobile') {
+      height: 28px;
+    }
+  }
+
+  &__half-circle {
+    & {
+      background: $pink;
+      display: inline-block;
+      height: $btn-top--size;
+      width: $btn-top--size * 2;
+      border-top-left-radius: $btn-top--size * 2;
+      border-top-right-radius: $btn-top--size * 2;
+      line-height: $btn-top--wrapper-height;
+
+      @include responsive-to('mobile') {
+        height: 30px;
+        width: 30px * 2;
+        border-top-left-radius: 30px * 2;
+        border-top-right-radius: 30px * 2;
+        line-height: 28px;
+      }
+    }
+    &:hover {
+      color: white;
+      background: $red;
+    }
+    i {
+      color: $white;
+      font-size: 20px;
+      @include responsive-to('mobile') {
+        font-size: 14px;
+      }
+    }
+  }
+}

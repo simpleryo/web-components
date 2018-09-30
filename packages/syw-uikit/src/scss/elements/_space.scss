@@ -1,0 +1,55 @@
+$spacingListForSpecificSide: 0 5 10 20 25 30 35 40 50 60 70 80 90 100 110 120;
+$spacingListForEachSide: 0 5 10 20 25 30 35 40 50 60 70 80 90 100 110 120;
+
+%clearboth-style {
+  clear: both;
+}
+
+@mixin generate-spacing($type, $side, $items) {
+  @if $side == '*' {
+    @each $item in $items {
+      .#{$type}-#{$item} {
+        #{$type}: #{$item}px;
+      }
+    }
+  } @else if $side == 'bottom' {
+    @each $item in $items {
+      .#{$type}-#{$side}-#{$item} {
+        @extend %clearboth-style;
+        #{$type}-#{$side}: #{$item}px;
+      }
+    }
+  } @else {
+    @each $item in $items {
+      .#{$type}-#{$side}-#{$item} {
+        #{$type}-#{$side}: #{$item}px;
+      }
+    }
+  }
+}
+
+@include generate-spacing('margin', 'top', $spacingListForSpecificSide);
+
+@include generate-spacing('margin', 'right', $spacingListForSpecificSide);
+
+@include generate-spacing('margin', 'bottom', $spacingListForSpecificSide);
+
+@include generate-spacing('margin', 'left', $spacingListForSpecificSide);
+
+@include generate-spacing('margin', '*', $spacingListForEachSide);
+
+@include generate-spacing('padding', 'top', $spacingListForSpecificSide);
+
+@include generate-spacing('padding', 'right', $spacingListForSpecificSide);
+
+@include generate-spacing('padding', 'bottom', $spacingListForSpecificSide);
+
+@include generate-spacing('padding', 'left', $spacingListForSpecificSide);
+
+@include generate-spacing('padding', '*', $spacingListForEachSide);
+
+.margin-top-20-xs {
+  @include responsive-to('mobile') {
+    margin-top: 20px;
+  }
+}

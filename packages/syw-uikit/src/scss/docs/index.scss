@@ -1,0 +1,35 @@
+@import "./docs";
+@import "./pygments-manni";
+@import "./highlighter";
+
+.full-width-layout {
+  .list-group .list-group-item {
+    display: inline-block;
+  }
+}
+
+.general-layout {
+  .list-group .list-group-item {
+    @media only screen and (max-width: 767px) {
+      display: inline-block;
+    }
+    @media only screen and (max-width: 991px) {
+      display: inline-block;
+    }
+  }
+}
+
+header{
+  min-height: 50px;
+  background-color: #F8F8F8;
+  margin: 0 -15px 25px -15px;
+  padding: 15px 0;
+}
+
+.logo{
+  display: inline-block;
+}
+
+.icon-list{
+  font-size: 20px;
+}

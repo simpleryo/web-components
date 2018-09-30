@@ -1,0 +1,36 @@
+/* ------------------------------------------------- */
+// Override tooltip style
+/* ------------------------------------------------- */
+
+.ant-tooltip {
+  & {
+    width: 510px;
+    @include responsive-to('mobile') {
+      width: 80%;
+    }
+  }
+  .ant-tooltip-inner {
+    background-color: $black;
+    max-width: inherit;
+    padding: 20px;
+    color: $white;
+    font-size: 14px;
+    line-height: 23px;
+  }
+}
+
+.ant-tooltip-placement-bottom .ant-tooltip-arrow,
+.ant-tooltip-placement-bottomLeft .ant-tooltip-arrow,
+.ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+  top: 0;
+  border-width: 0 8px 8px;
+  border-bottom-color: $black;
+}
+
+.ant-tooltip-placement-top .ant-tooltip-arrow,
+.ant-tooltip-placement-topLeft .ant-tooltip-arrow,
+.ant-tooltip-placement-topRight .ant-tooltip-arrow {
+  bottom: 0;
+  border-width: 8px 8px 0;
+  border-top-color: $black;
+}

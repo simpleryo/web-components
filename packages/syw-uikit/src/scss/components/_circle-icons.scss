@@ -1,0 +1,138 @@
+$circle-icon-size-list: (28, 17px), (36, 18px), (48, 26px), (54, 30px), (80, 38px), (96, 38px);
+$circle-icon-number-size-list: (28, 10px), (36, 14px), (48, 22px), (54, 24px), (80, 36px);
+$circle-icon-status-list: ("default", $dark-grey, $grey),
+  ("active", $pink, $light-pink),
+  ("completed", $dark-grey, $green),
+  ("error", $dark-grey, $active-red),
+  ("disabled", $light-grey, $grey);
+
+@mixin generate-circle-icon-size($prefix, $list) {
+  @each $size, $font-size in $list {
+    .circle-icon.circle-icon--#{$prefix}size-#{$size} {
+      font-size: #{$font-size};
+      width: #{$size}px;
+      height: #{$size}px;
+      @if $prefix == 'number' {
+        @if $size == 80 {
+          @include responsive-to('mobile') {
+            font-size: 24px;
+            width: 54px;
+            height: 54px;
+          }
+        }
+      } @else {
+        @if $size != 36 and $size != 28 {
+          @include responsive-to('mobile') {
+            font-size: 30px;
+            width: 54px;
+            height: 54px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-circle-icon-status($list) {
+  @each $status, $icon-color, $status-color in $list {
+    .status-circle-icon.status-circle-icon--#{$status} {
+      i {
+        background: $icon-color;
+        @if $status == "disabled" {
+          background: $mid-grey;
+          color: $white;
+          cursor: not-allowed;
+        }
+      }
+      div {
+        background: $status-color;
+      }
+      &:hover {
+        i {
+          background: $pink;
+          color: white;
+          cursor: pointer;
+          @if $status == "disabled" {
+            background: $mid-grey;
+            color: $white;
+            cursor: not-allowed;
+          }
+        }
+        div {
+          background: $light-pink;
+          @if $status == "disabled" {
+            background: $status-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.circle-icon {
+  & {
+    display: table;
+    font-style: normal;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+
+    &:before,
+    & span {
+      font-weight: 300;
+      line-height: normal;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.cta-circle-icon {
+  .circle-icon:hover {
+    background: $pink;
+    color: $white;
+  }
+}
+
+.status-circle-icon {
+  & {
+    position: relative;
+    cursor: pointer;
+    i {
+      position: absolute;
+    }
+
+    div {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      font-size: 14px;
+      border-radius: 50%;
+      border: 1px solid $white;
+    }
+  }
+
+  &--size-36 {
+    width: 43px;
+    height: 36px;
+    div {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--size-28 {
+    width: 34px;
+    height: 28px;
+    div {
+      width: 13px;
+      height: 13px;
+    }
+  }
+}
+
+@include generate-circle-icon-size('', $circle-icon-size-list);
+@include generate-circle-icon-size('number', $circle-icon-number-size-list);
+@include generate-circle-icon-status($circle-icon-status-list);

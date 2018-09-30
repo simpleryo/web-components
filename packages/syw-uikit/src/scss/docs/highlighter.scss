@@ -1,0 +1,19 @@
+.highlight {
+  background-color: #F8F8F8;
+  padding: 0;
+  border: 0;
+  pre {
+    font-size: 14px;
+    padding: 10px !important;
+  }
+  pre code {
+    color:#FFFFFF;
+  }
+}
+
+.bs-example + .highlight, .bs-example + .zero-clipboard + .highlight {
+  //border-width: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+

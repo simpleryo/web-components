@@ -1,0 +1,15 @@
+/* ------------------------------------------------- */
+// Stylesheet for datepick
+/* ------------------------------------------------- */
+
+.date-range{
+  &__start {
+
+  }
+
+  &__end {
+    @include responsive-to("mobile") {
+      padding-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.ant-collapse {
+  color: $black;
+  &:last-child {
+    border-bottom: 1px solid #B9B9B9;
+  }
+
+  & > .ant-collapse-item{
+    position: relative;
+    min-height: 75px;
+    border-top: 1px solid $grey;
+    border-bottom: none;
+    @include responsive-to('mobile') {
+      min-height: 65px;
+    }
+
+    & > .ant-collapse-header{
+      & {
+        color: $black;
+        padding: 22px 0;
+        @include responsive-to('mobile') {
+          padding: 10px 0;
+        }
+      }
+
+      &:hover{
+        background-color: white;
+      }
+      .arrow{
+        position: relative;
+        float: right;
+        margin-right: 30px;
+        font-weight: normal;
+        color: black;
+        line-height: 30px;
+        transform: scale(1) rotate(90deg);
+
+        &:before{
+          font-family: "fontello" !important;
+          content: '\E80B';
+        }
+        @include responsive-to('mobile') {
+          transform: scale(0.75) rotate(90deg);
+        }
+      }
+      &[aria-expanded="true"] .arrow {
+        transform: scale(1) rotate(270deg);
+        @include responsive-to('mobile') {
+          transform: scale(0.75) rotate(270deg);
+        }
+      }
+    }
+  }
+}
+
+.ant-collapse-borderless{
+  & {
+    background-color: transparent;
+    border: 0;
+  }
+
+  & > .ant-collapse-item {
+    & > .ant-collapse-content {
+      color: $black;
+      margin-left: 25%;
+      border-top: 1px dotted $grey;
+      padding: 0;
+      @include responsive-to('tablet') {
+        margin-left: inherit;
+      }
+    }
+  }
+}
+
+.ant-collapse-content > .ant-collapse-content-box {
+  &{
+    padding: 20px 60px 20px 8px;
+    @include responsive-to('tablet') {
+      padding: 20px 0;
+    }
+    @include responsive-to('mobile') {
+      padding: 10px 0;
+    }
+  }
+  ul {
+    margin-bottom: 0;
+  }
+}

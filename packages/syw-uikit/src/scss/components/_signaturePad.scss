@@ -1,0 +1,21 @@
+.signature-pad {
+  &__container {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .pad {
+      position: relative;
+      display: inline-block;
+      canvas {
+        border: 1px solid $mid-grey;
+        background-color: $light-grey;
+      }
+      .underline {
+        width: 100%;
+        position: absolute;
+        top: 75%;
+        border: 1px solid $grey;
+      }
+    }
+  }
+}

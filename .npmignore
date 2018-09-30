@@ -1,0 +1,40 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+
+# OS specific
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log
+
+# Binaries
+bin
+
+# Optional npm cache directory
+.npm
+
+# Temp directory
+.sass-cache
+
+# tests
+test
+spec/build
+coverage
+TESTS*
+__tests__
+
+# generated directory
+yarn.lock
+
+# config files
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc
+.gitattributes
+.npmignore
+server.js

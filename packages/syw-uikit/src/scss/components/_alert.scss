@@ -1,0 +1,65 @@
+/* ------------------------------------------------- */
+// Stylesheet for Alert message
+/* ------------------------------------------------- */
+
+.ant-alert {
+  padding: 10px 10px 10px 42px;
+}
+
+.ant-alert-success,
+.ant-alert-info,
+.ant-alert-warning,
+.ant-alert-error {
+  border: 0;
+}
+
+.ant-alert-message {
+  @extend p;
+  color: $black;
+  line-height: inherit;
+  margin-bottom: 0 !important;
+}
+
+.ant-alert-icon {
+  top: 13px;
+  left: 15px;
+  @include responsive-to('mobile') {
+    top: 11px;
+  }
+}
+
+.ant-alert-success .ant-alert-icon {
+  color: $green;
+}
+
+.ant-alert-info .ant-alert-icon {
+  color: $blue;
+}
+
+.ant-alert-error .ant-alert-icon {
+  color: $active-red;
+}
+
+.ant-alert-with-description {
+  padding: 10px 10px 10px 50px;
+  @include responsive-to('mobile') {
+    padding: 10px 10px 10px 42px;
+  }
+  .ant-alert-icon {
+    top: 15px;
+    left: 15px;
+    @include responsive-to('mobile') {
+      top: 13px;
+      font-size: 18px;
+    }
+  }
+  .ant-alert-message, .ant-alert-description {
+    color: black;
+  }
+  .ant-alert-message {
+    @extend h6;
+  }
+  .ant-alert-description {
+    @extend p.small;
+  }
+}

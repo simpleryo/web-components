@@ -1,0 +1,19 @@
+$mobileMaxWidth: 767px;
+$tabletMaxWidth: 991px;
+$desktopMaxWidth: 1199px;
+
+@mixin responsive-to($device) {
+  @if $device == 'mobile' {
+    @media only screen and (max-width: $mobileMaxWidth) {
+      @content;
+    }
+  }@else if $device == 'tablet' {
+    @media only screen and (max-width: $tabletMaxWidth) {
+      @content;
+    }
+  }@else if $device == 'desktop' {
+    @media only screen and (max-width: $desktopMaxWidth) {
+      @content;
+    }
+  }
+}

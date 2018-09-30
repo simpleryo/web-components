@@ -1,0 +1,75 @@
+/* ------------------------------------------------- */
+// Stylesheet for upload
+/* ------------------------------------------------- */
+.avatar-uploader,
+.avatar-uploader-trigger,
+.avatar {
+  width: 150px;
+  height: 150px;
+}
+.avatar-uploader {
+  display: block;
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.avatar-uploader-trigger {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 28px;
+  color: #999;
+}
+
+.ant-upload .form-group__message {
+  margin-top: 5px;
+  color: $black;
+}
+
+.ant-upload-list-item {
+  margin-bottom: 8px;
+}
+
+.ant-upload-list-item-info {
+  padding: 0 24px 0 5px;
+  line-height: inherit;
+}
+
+.ant-upload-list-item-name {
+  @extend p;
+  padding-left: 20px;
+  @include responsive-to('mobile') {
+    font-size: 14px;
+  }
+}
+
+.ant-upload-list-item-info .anticon-paper-clip {
+  font-size: 14px;
+  top: 50%;
+  margin-top: -7px;
+  @include responsive-to('mobile') {
+    font-size: 12px;
+    margin-top: -6px;
+  }
+}
+
+.upload-file__input {
+  cursor: pointer;
+  display: block;
+  filter: alpha(opacity=0);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ant-upload-list-picture .ant-upload-list-item-thumbnail {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: auto;
+  }
+}

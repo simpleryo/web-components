@@ -1,0 +1,73 @@
+/* ------------------------------------------------- */
+// Stylesheet for Notification
+/* ------------------------------------------------- */
+
+.ant-notification {
+  color: $black;
+  @include responsive-to('mobile') {
+    width: 84%;
+    margin-right: 8%;
+  }
+  .ant-notification-notice {
+    padding: 11px 15px;
+  }
+  .ant-notification-notice-icon {
+    font-size: 16px;
+    line-height: normal;
+    top: 15px;
+    left: 15px;
+    margin-left: 0;
+
+    &-success {
+      font-size: 16px;
+      &:before {
+        content: "\E630";
+      }
+    }
+    &-info {
+      font-size: 16px;
+      &:before {
+        content: "\E628";
+      }
+    }
+
+    &-warning {
+      font-size: 16px;
+      &:before {
+        content: "\E62C";
+      }
+    }
+    &-error {
+      font-size: 16px;
+      &:before {
+        content: "\E62E";
+      }
+    }
+  }
+
+  .ant-notification-notice-message {
+    font-size: 16px;
+    font-weight: bold;
+    color: $black;
+  }
+  .ant-notification-notice-description {
+    //@extend p.small;
+    margin-right: 10px;
+  }
+
+  .ant-notification-notice-with-icon {
+    .ant-notification-notice-message {
+      margin-left: 26px;
+    }
+    .ant-notification-notice-description {
+      margin-left: 26px;
+      margin-right: 10px;
+    }
+  }
+
+  .ant-notification-notice-close {
+    right: 12px;
+    top: 8px;
+  }
+
+}

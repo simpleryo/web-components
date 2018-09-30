@@ -1,0 +1,81 @@
+/* ------------------------------------------------- */
+// Generic styles
+/* ------------------------------------------------- */
+
+html {
+  // supress webkit font adjustment
+  -webkit-text-size-adjust: none !important;
+  font-size: 16px;
+}
+
+body {
+  @extend .font--weight-light;
+  text-rendering: optimizeLegibility;
+  background: white;
+  font-size: 16px;
+  color: black;
+  padding: 0;
+}
+
+::selection {
+  background: $blue;
+  color: #fff;
+}
+
+.container {
+  & {
+    @media (min-width: 1200px) {
+      width: 970px;
+    }
+    @include responsive-to('mobile') {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  &__inner-wrapper {
+    width: 600px;
+    margin: 0 auto;
+    @include responsive-to('mobile') {
+      width: 100%;
+    }
+  }
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.float-none {
+  float: none;
+  &--center {
+    margin: auto;
+  }
+}
+
+.display-table {
+  display: table;
+}
+
+.display-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  @include responsive-to('mobile') {
+    display: block;
+    float: left;
+  }
+}
+
+.full-height {
+  height: 100%;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td {
+  border-top: 1px dashed #ddd;
+}
+

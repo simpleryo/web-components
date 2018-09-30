@@ -1,0 +1,41 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+# IntelliJ project files
+.idea
+*.iml
+out
+
+# OS specific
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log
+
+# Binaries
+bin
+
+# Optional npm cache directory
+.npm
+npm-debug*
+
+# Dependency directory
+node_modules
+
+# Temp directory
+.sass-cache
+temp.txt
+temp
+
+# test
+packages/*/__tests__/reports
+
+# generated directory
+dist
+!tools/dist
+lib
+!tools/lib/
+style
+!tools/style

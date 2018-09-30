@@ -1,0 +1,35 @@
+/* ------------------------------------------------- */
+// Stylesheet for Content card
+/* ------------------------------------------------- */
+
+.content-card {
+
+  &__wrapper {
+    float: none;
+    margin: 0 auto;
+  }
+
+  h1, h2 {
+    margin-bottom: 30px;
+    @include responsive-to('mobile') {
+      margin-bottom: 20px;
+    }
+  }
+  h3, h4, h5, p {
+    margin-bottom: 10px;
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  button {
+    margin-top: 20px;
+  }
+  .icon-img {
+    margin-bottom: 30px;
+    @include responsive-to('mobile') {
+      margin-bottom: 10px;
+    }
+  }
+}

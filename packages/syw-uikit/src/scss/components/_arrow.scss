@@ -1,0 +1,18 @@
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  @include responsive-to('mobile') {
+    border-width: 10px 10px 0 10px;
+  }
+  &--white {
+    border-color: $white transparent transparent transparent;
+  }
+  &--light-grey {
+    border-color: $light-grey transparent transparent transparent;
+  }
+  &--mid-grey {
+    border-color: $mid-grey transparent transparent transparent;
+  }
+}

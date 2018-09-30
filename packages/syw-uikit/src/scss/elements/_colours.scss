@@ -1,0 +1,73 @@
+/* Primary colours */
+$white: #FFFFFF;
+$black: #000000;
+
+/* active colours */
+$baby-pink: #FFD9D9;
+$light-pink: #FF91A9;
+$pink: #F32E59;
+$red: #BA1E40;
+$active-red: #F50000;
+
+/* CTA colours */
+$light-blue: #91DEFF;
+$blue: #20B1EE;
+$dark-blue: #1794C8;
+
+/* Grey colours */
+$light-grey: #F8F8F8;
+$semi-light-grey: #ececec;
+$mid-grey: #DDDDDD;
+$grey: #B9B9B9;
+$copy-grey: #989898;
+$dark-grey: #373737;
+$heavy-grey: #292929;
+$serious-grey: #1C1C1C;
+
+/* Green colours */
+$light-green: #B8DF8B;
+$green: #2BAF6F;
+
+/* Yellow colours */
+$yellow: #F5A623;
+
+$color-list: ("white", $white),
+  ("black", $black),
+  ("baby-pink", $baby-pink),
+  ("light-pink", $light-pink),
+  ("pink", $pink),
+  ("red", $red),
+  ("active-red", $active-red),
+  ("light-blue", $light-blue),
+  ("blue", $blue),
+  ("dark-blue", $dark-blue),
+  ("light-grey", $light-grey),
+  ("semi-light-grey", $light-grey),
+  ("mid-grey", $mid-grey),
+  ("grey", $grey),
+  ("copy-grey", $copy-grey),
+  ("dark-grey", $dark-grey),
+  ("heavy-grey", $heavy-grey),
+  ("serious-grey", $serious-grey),
+  ("light-green", $light-green),
+  ("green", $green),
+  ("yellow", $yellow);
+
+@mixin generate-color($list) {
+  @each $colorName, $color in $list {
+    .#{$colorName} {
+      color: #{$color};
+    }
+  }
+}
+
+@mixin generate-bg-color($list) {
+  @each $colorName, $color in $list {
+    .bg--#{$colorName} {
+      background-color: #{$color};
+    }
+  }
+}
+
+@include generate-color($color-list);
+@include generate-bg-color($color-list);

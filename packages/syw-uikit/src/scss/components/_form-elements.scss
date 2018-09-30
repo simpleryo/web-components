@@ -1,0 +1,203 @@
+/* ------------------------------------------------- */
+// Stylesheet for Form
+/* ------------------------------------------------- */
+
+// Remove form elements focus outline
+input {
+  &:focus,
+  &[type="file"]:focus,
+  &[type="radio"]:focus,
+  &[type="checkbox"]:focus {
+    outline: none !important;
+  }
+  &,
+  &[type=text],
+  &[type=password],
+  &[type=email] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+.ant-input:focus {
+  box-shadow: none;
+  border-color: $blue;
+}
+
+.checkbox input {
+  &[type="checkbox"]:focus + label:before,
+  &[type="radio"]:focus + label:before {
+    outline: none !important;
+  }
+}
+
+.radio input[type="radio"]:focus + label:before {
+  outline: none !important;
+}
+
+.ant-input,
+.ant-input-group,
+.ant-input-number {
+  @extend .font--weight-light;
+  color: $black;
+}
+
+.ant-input-disabled {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+
+// Input Number
+.ant-input-number {
+  &:focus,
+  &-focused {
+    box-shadow: none;
+    border-color: $blue;
+  }
+  &-handler {
+    &:hover &-up-inner,
+    &:hover &-down-inner {
+      color: $blue;
+    }
+  }
+  &-input {
+    color: $black;
+  }
+}
+
+//Input with Affix/ Suffix icon style
+.ant-input-affix-wrapper {
+  .ant-input:not(:first-child) {
+    padding-left: 37px;
+  }
+  .ant-input:not(:last-child) {
+    padding-right: 37px;
+  }
+}
+
+//Some form style inherit from bootstrap
+.form-group {
+  & {
+    margin-bottom: 15px;
+  }
+  &__title {
+    font-weight: normal;
+    margin-bottom: 10px;
+    display: block;
+    .label {
+      vertical-align: middle;
+    }
+    .label-icon {
+      display: inline-block;
+      height: 14px;
+      vertical-align: middle;
+    }
+  }
+  &__message {
+    margin-top: 5px;
+  }
+
+  .ant-checkbox-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+//Input form group spacing control in between elements
+.input-group>[class*=col-] {
+  padding-right: 0;
+  &:last-child {
+    padding-right: 15px;
+  }
+}
+
+//input with cta button style
+.input-cta {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.input-cta-btn {
+  position: relative;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.form-group-with-btn {
+  @extend .form-group;
+  button {
+    height: 48px;
+    margin-top: inherit;
+    margin-left: 10px;
+  }
+
+  .input-cta-btn--no-gap {
+    button {
+      @include responsive-to('mobile') {
+        min-width: auto;
+      }
+      margin-left: 0;
+    }
+  }
+}
+
+/* ------------------------------------------------- */
+// Input, textarea, select, form-group
+// and input-group error & warning style
+/* ------------------------------------------------- */
+.has-error {
+  .form-group__title,
+  .form-group__message {
+    color: $active-red;
+  }
+
+  .ant-input,
+  .ant-input-number,
+  .ant-select-selection {
+    border: 1px solid $active-red;
+  }
+}
+
+//Warning style
+.has-warning {
+  .form-group__message {
+    color: $yellow;
+  }
+}
+
+input,
+textarea,
+.ant-input-number,
+.ant-select-selection {
+  &.has-error {
+    border: 1px solid $active-red;
+  }
+}
+
+/* ------------------------------------------------- */
+//input elements uppercase style
+/* ------------------------------------------------- */
+
+input,
+textarea,
+.ant-select {
+
+  &::placeholder {
+    text-transform: none;
+  }
+
+}
+
+//Ant table style
+.ant-table {
+  &-thead > tr > th,
+  &-tbody > tr > td {
+    font-size: 16px;
+    @include responsive-to('mobile') {
+      font-size: 14px;
+    }
+  }
+}

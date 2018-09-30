@@ -1,0 +1,86 @@
+/* ------------------------------------------------- */
+// Stylesheet for Modal
+/* ------------------------------------------------- */
+
+.ant-modal-close-x {
+  &:before {
+    font-family: "fontello" !important;
+    content: '\E812';
+  }
+}
+
+.ant-modal {
+  & {
+    @extend .font--weight-light;
+    color: $black;
+  }
+  .ant-modal-body {
+    padding: 50px 20px 20px;
+    min-height: 150px;
+  }
+  .ant-modal-footer {
+    & {
+      padding: 20px;
+      @extend .clearfix;
+      @include responsive-to('mobile') {
+        .ant-btn {
+          float: left;
+        }
+        .ant-btn-primary {
+          float: right;
+        }
+      }
+    }
+    .ant-btn {
+      @extend .ant-btn-sm;
+    }
+  }
+}
+
+.modal-fullscreen {
+  .ant-modal-close-x {
+    & {
+      margin: 15px;
+      @include responsive-to('mobile') {
+        margin: 0;
+      }
+    }
+    &:before {
+      font-size: 25px;
+      @include responsive-to('mobile') {
+        font-size: inherit;
+      }
+    }
+  }
+
+  .ant-modal{
+    height: 100%;
+    overflow: hidden;
+
+    top: 0;
+    padding-bottom: 0;
+    @include responsive-to('tablet') {
+      margin: 0;
+    }
+    @include responsive-to('mobile') {
+      margin: 0;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 100px 0;
+    @include responsive-to('tablet') {
+      padding: 80px 0;
+    }
+    @include responsive-to('mobile') {
+      padding: 50px 0;
+    }
+  }
+
+  .ant-modal-content{
+    height: 100%;
+    overflow: scroll;
+    box-shadow: none;
+  }
+
+}

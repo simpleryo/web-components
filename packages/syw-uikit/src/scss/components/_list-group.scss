@@ -1,0 +1,19 @@
+.list-group {
+  .list-group-item {
+    border: inherit;
+    border-bottom: 1px solid $mid-grey;
+    margin-bottom: 0;
+
+    &.active {
+      background: $pink;
+      border-color: inherit;
+
+      &:hover, &:focus {
+        border-color: inherit;
+      }
+    }
+    &:first-child, &:last-child {
+      border-radius: 0;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+/* ------------------------------------------------- */
+// Stylesheet for Card
+/* ------------------------------------------------- */
+
+.ant-card {
+  @extend .font--weight-light;
+  color: $black;
+  &.action-card {
+    & {
+      @extend p;
+      color: $black;
+      background: transparent;
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    }
+    .ant-card-head {
+      background: transparent;
+      border-bottom: none;
+      margin-bottom: 10px;
+      padding: inherit;
+      min-height: inherit;
+      @include responsive-to("mobile") {
+        margin-bottom: 0;
+      }
+    }
+
+    .ant-card-head-wrapper {
+      @include responsive-to("mobile") {
+        margin-bottom: 5px;
+      }
+    }
+
+    .ant-card-head-title {
+      @extend h5;
+      margin: auto;
+      white-space: inherit;
+      & > div {
+        padding-right: 5px;
+      }
+    }
+    .ant-card-extra {
+      padding: inherit;
+      display: table;
+      height: 36px;
+      a {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    .ant-card-body {
+      background: $white;
+      padding: 20px;
+    }
+    .ant-card-loading-content {
+      padding: 0;
+    }
+  }
+
+  &.event-card {
+    & {
+      color: $black;
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+    .ant-card-cover {
+      overflow: hidden;
+      height: 110px;
+      img {
+        /*width: inherit;*/
+        margin: 0 auto;
+      }
+    }
+    .ant-card-body {
+      padding: 15px;
+    }
+    .ant-card-meta-description {
+      @extend p.small;
+      color: $copy-grey;
+    }
+    .ant-card-meta-title {
+      @extend h6;
+    }
+    .ant-card-meta-detail > div:not(:last-child) {
+      margin-bottom: inherit;
+    }
+  }
+}

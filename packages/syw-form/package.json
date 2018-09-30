@@ -1,0 +1,24 @@
+{
+  "name": "@simpleryo/syw-form",
+  "version": "0.1.5",
+  "description": "SimplerYo Form",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "lint": "eslint --ext .jsx --ext .js src/",
+    "lint:fix": "yarn lint --fix",
+    "prebuild": "rimraf ./lib",
+    "build": "babel ./src --out-dir ./lib --copy-files",
+    "test": "jest"
+  },
+  "repository": "@simpleryo/web-components",
+  "author": "SimplerYO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simpleryo/web-components/issues"
+  },
+  "dependencies": {
+    "@simpleryo/syw-uikit": "*",
+    "@simpleryo/syw-utils": "*"
+  }
+}
