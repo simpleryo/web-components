@@ -30,9 +30,10 @@ if (process.env.NODE_ENV === "development") {
     })
   );
   app.use(WebpackHotMiddleware(compiler));
+} else {
+  app.use("/", express.static(path.join(__dirname, "./dist/")));
 }
 
-app.use("/", express.static(path.join(__dirname, "./dist/")));
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "./index.html"));
 });
