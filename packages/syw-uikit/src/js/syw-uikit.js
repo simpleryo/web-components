@@ -38,6 +38,8 @@ export { default as AutoComplete } from "antd/es/auto-complete";
 export { default as AntdAlert } from "antd/es/alert";
 export { default as BackTop } from "antd/es/back-top";
 export { default as Breadcrumb } from "antd/es/breadcrumb";
+export { default as Avatar } from "antd/es/avatar";
+export { default as Badge } from "antd/es/badge";
 
 export {
   Alert,

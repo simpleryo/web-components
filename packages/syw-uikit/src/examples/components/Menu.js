@@ -96,6 +96,12 @@ const Menu = () => (
     <NavLink className="list-group-item" to="/promotion-code">
       PromotionCode
     </NavLink>
+    <NavLink className="list-group-item" to="/avatar">
+      Avatar
+    </NavLink>
+    <NavLink className="list-group-item" to="/badge">
+      Badge
+    </NavLink>
   </div>
 );
 

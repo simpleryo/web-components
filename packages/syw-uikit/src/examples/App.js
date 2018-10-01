@@ -35,6 +35,8 @@ import NotificationDemo from "./components/NotificationDemo";
 import AutoCompleteDemo from "./components/AutoCompleteDemo";
 import MarkdownDemo from "./components/MarkdownDemo";
 import PromotionCodeDemo from "./components/PromotionCodeDemo";
+import Avatars from "./components/AvatarDemo";
+import Badges from "./components/BadgeDemo";
 
 const App = () => (
   <BrowserRouter>
@@ -148,6 +150,14 @@ const App = () => (
       <Route
         path="/promotion-code"
         component={() => <PromotionCodeDemo layout={GeneralLayout} />}
+      />
+      <Route
+        path="/avatar"
+        component={() => <Avatars layout={GeneralLayout} />}
+      />
+      <Route
+        path="/badge"
+        component={() => <Badges layout={GeneralLayout} />}
       />
     </Switch>
   </BrowserRouter>

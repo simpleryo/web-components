@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Input, Popover } from "../../js/syw-uikit";
+import PropTypes from "prop-types";
+import { Input, Popover, Badge, Avatar } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
 const contentExample = (
@@ -49,6 +50,7 @@ class PopoverDemo extends Component {
                 className="link link__highlight"
                 href="https://ant.design/components/popover-cn/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Antd Popover
               </a>
@@ -150,10 +152,67 @@ const content = (
 `}
             </Snippet>
           </div>
+
+          <div className="col-xs-12">
+            <div className="bs-callout bs-callout-info">
+              <h5>
+                <i>Avatar with badge style</i>
+              </h5>
+            </div>
+            <div className="bs-example bg--mid-grey">
+              <div className="row">
+                <div className="col-xs-6">
+                  <Popover
+                    overlayClassName="dropdown-menu"
+                    placement="bottomRight"
+                    content={content}
+                    trigger="click"
+                  >
+                    <Badge count={12} className="btn-popover">
+                      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                    </Badge>
+                  </Popover>
+                </div>
+              </div>
+            </div>
+
+            <Snippet language="html">
+              {`import { Popover, Badge, Avatar } from '@simpleryo/syw-uikit';
+const content = (
+  <div>
+    <ul className="list-unstyled">
+      <li><a href="/">我的主页</a></li>
+      <li><a href="/">我的申请</a></li>
+      <li><a href="/">个人设置</a></li>
+    </ul>
+    <hr/>
+    <ul className="list-unstyled">
+      <li><a href="/">在线帮助</a></li>
+      <li><a href="/">退出登录</a></li>
+    </ul>
+  </div>
+);
+
+<Popover
+  overlayClassName="dropdown-menu"
+  placement="bottomRight"
+  content={content}
+  trigger="click"
+>
+  <Badge count={12} className="btn-popover">
+    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+  </Badge>
+</Popover>
+`}
+            </Snippet>
+          </div>
         </div>
       </Layout>
     );
   }
 }
 
+PopoverDemo.propTypes = {
+  layout: PropTypes.any
+};
 export default PopoverDemo;

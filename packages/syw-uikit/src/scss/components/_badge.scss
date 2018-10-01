@@ -1,0 +1,11 @@
+/* ------------------------------------------------- */
+// Stylesheet for Badge
+/* ------------------------------------------------- */
+
+.ant-badge {
+  @extend .font--weight-light;
+  .ant-scroll-number-only p {
+    line-height: 20px;
+    font-size: 12px;
+  }
+}
