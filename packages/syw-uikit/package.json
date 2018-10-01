@@ -9,10 +9,10 @@
     "clean": "rimraf ./dist ./lib",
     "lint": "eslint --ext .jsx --ext .js src/ test/",
     "lint:fix": "yarn lint --fix",
-    "start": "NODE_ENV=production node server.js",
-    "start:dev": "NODE_ENV=development node server.js",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "start:dev": "cross-env NODE_ENV=development node server.js",
     "prebuild": "yarn run clean",
-    "build": "NODE_ENV=production yarn run build:web && yarn run build:lib && yarn run build:server",
+    "build": "cross-env NODE_ENV=production yarn run build:web && yarn run build:lib && yarn run build:server",
     "build:web": "webpack --config webpack.config.prod.js",
     "build:lib": "babel ./src/js --out-dir ./lib --copy-files",
     "build:server": "babel --ignore ./src/js ./src --out-dir ./dist --copy-files"

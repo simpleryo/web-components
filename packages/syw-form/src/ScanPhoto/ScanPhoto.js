@@ -135,9 +135,13 @@ class ScanPhoto extends PureComponent {
     return (
       <Fragment>
         <div
-          className={classNames("ant-btn ant-btn-sm", className, {
-            disabled: progress.status === "active"
-          })}
+          className={classNames(
+            "padding-top-10 padding-bottom-10 ant-btn ant-btn-sm",
+            className,
+            {
+              disabled: progress.status === "active"
+            }
+          )}
         >
           <span>{label}</span>
           <input
