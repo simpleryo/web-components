@@ -29,12 +29,9 @@
         margin-right: calc(-35px - 8px);
       }
     }
-    /*.ant-progress-text {
-      width: 45px;
-      @include responsive-to("mobile") {
-        width: 35px;
-      }
-    }*/
+    .ant-progress-text {
+      width: 35px;
+    }
   }
 
   .ant-progress-status-active .ant-progress-bg:before {
@@ -44,6 +41,7 @@
   // Circle style
   .ant-progress-circle .ant-progress-text {
     font-family: inherit;
+    width: 100%;
   }
 
   .ant-progress-circle-path {

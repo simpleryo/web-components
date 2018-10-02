@@ -15,5 +15,6 @@ yarn.lock
 *.jpeg
 *.xml
 *.txt
+*.sh
 assets
 scss
