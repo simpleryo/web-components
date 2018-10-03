@@ -1,6 +1,6 @@
 {
   "name": "@simpleryo/syw-utils",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "simpleryo web util functions",
   "main": "lib/index.js",
   "module": "src/front/index.js",

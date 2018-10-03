@@ -16,7 +16,9 @@
     "start:mock": "lerna run start:mock --stream",
     "start:dev": "lerna run start:dev --stream --parallel",
     "pretest": "rimraf ./packages/**/__tests__/reports",
-    "test": "lerna run test --stream --parallel"
+    "test": "lerna run test --stream --parallel",
+    "prepublish-packages": "yarn build",
+    "publish-packages": "sh ./npm_publish.sh"
   },
   "husky": {
     "hooks": {

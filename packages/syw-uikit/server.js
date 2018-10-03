@@ -30,13 +30,15 @@ if (process.env.NODE_ENV === "development") {
     })
   );
   app.use(WebpackHotMiddleware(compiler));
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./index.html"));
+  });
 } else {
   app.use("/", express.static(path.join(__dirname, "./dist/")));
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./dist/index.html"));
+  });
 }
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./index.html"));
-});
 
 app.listen(app.get("port"), () => {
   console.log(`UIKit started: http://localhost:${app.get("port")}/`);

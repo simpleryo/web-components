@@ -1,6 +1,6 @@
 {
   "name": "@simpleryo/syw-form",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "SimplerYo Form",
   "main": "lib/index.js",
   "module": "src/index.js",
