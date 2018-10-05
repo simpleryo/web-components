@@ -585,6 +585,11 @@ const Icons = ({ layout: Layout }) => (
             <span className="i-name">icon-valid</span>&nbsp;
             <span className="small i-code">0xe88f</span>
           </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-github" />
+            <span className="i-name">icon-github</span>&nbsp;
+            <span className="small i-code">0xe892</span>
+          </div>
         </div>
       </div>
     </div>
