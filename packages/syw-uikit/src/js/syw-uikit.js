@@ -40,6 +40,7 @@ export { default as BackTop } from "antd/es/back-top";
 export { default as Breadcrumb } from "antd/es/breadcrumb";
 export { default as Avatar } from "antd/es/avatar";
 export { default as Badge } from "antd/es/badge";
+export { default as Table } from "antd/es/table";
 
 export {
   Alert,

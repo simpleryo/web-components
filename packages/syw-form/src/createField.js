@@ -258,7 +258,7 @@ const createField = WrappedComponent => {
     description: PropTypes.string,
     hint: PropTypes.string,
     placeholder: PropTypes.string,
-    error: PropTypes.string,
+    error: PropTypes.node,
     onChange: PropTypes.func,
     onSelect: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

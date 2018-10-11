@@ -1,0 +1,23 @@
+.ant-table {
+  .ant-table-thead {
+    > tr {
+      > th {
+        background-color: $white;
+      }
+    }
+  }
+  .ant-table-tbody {
+    tr {
+      &.ant-table-row-selected {
+        td {
+          background-color: #f7fdff;
+        }
+      }
+      &:hover {
+        td {
+          background-color: #f7fdff;
+        }
+      }
+    }
+  }
+}
