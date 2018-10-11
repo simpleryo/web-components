@@ -59,7 +59,7 @@ FieldTheme.propTypes = {
   label: PropTypes.node,
   description: PropTypes.string,
   hint: PropTypes.string,
-  error: PropTypes.string
+  error: PropTypes.node
 };
 
 export default FieldTheme;
