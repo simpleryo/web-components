@@ -3,6 +3,7 @@
 /* ------------------------------------------------- */
 
 .btn-popover {
+  color: $black;
   &:hover {
     cursor: pointer;
   }
@@ -19,6 +20,11 @@
     font-size: 32px;
     &:before {
       margin: 0;
+    }
+  }
+  &.icon-user {
+    @include responsive-to('mobile') {
+      display: inline-block !important;
     }
   }
 }

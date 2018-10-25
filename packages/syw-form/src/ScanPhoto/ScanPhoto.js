@@ -163,7 +163,7 @@ class ScanPhoto extends PureComponent {
               })}
             >
               <Progress
-                percent={Math.round(progress.percent)}
+                percent={Math.floor(progress.percent)}
                 status={progress.status}
               />
 
