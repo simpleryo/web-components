@@ -127,13 +127,18 @@ class ScanPhoto extends PureComponent {
   };
 
   render() {
-    const { className, label, rules, hint } = this.props;
+    const { className, label, rules, hint, sampleImg } = this.props;
     const { progress = {} } = this.state;
     const errorMsg = this.state.error
       ? getBreakRuleMessage(rules, this.state.error)
       : undefined;
     return (
       <Fragment>
+        {sampleImg && (
+          <div className="ocr-sample margin-bottom-20">
+            <img src={sampleImg} alt="Sample" />
+          </div>
+        )}
         <div
           className={classNames(
             "padding-top-10 padding-bottom-10 ant-btn ant-btn-sm",
@@ -172,6 +177,7 @@ class ScanPhoto extends PureComponent {
               )}
             </div>
           )}
+        <hr className="margin-top-40 margin-bottom-0" />
       </Fragment>
     );
   }
@@ -181,6 +187,7 @@ ScanPhoto.propTypes = {
   label: PropTypes.string,
   rules: PropTypes.array,
   hint: PropTypes.string,
+  sampleImg: PropTypes.string,
   progressMessages: PropTypes.object,
   onScan: PropTypes.func.isRequired,
   onScanResponse: PropTypes.func.isRequired,
