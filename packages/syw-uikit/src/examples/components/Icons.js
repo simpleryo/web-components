@@ -591,6 +591,29 @@ const Icons = ({ layout: Layout }) => (
             <span className="small i-code">0xe892</span>
           </div>
         </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-setting" />
+            <span className="i-name">icon-setting</span>&nbsp;
+            <span className="small i-code">0xe84a</span>
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-translate" />
+            <span className="i-name">icon-translate</span>&nbsp;
+            <span className="small i-code">0xe84b</span>
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-consultation" />
+            <span className="i-name">icon-consultation</span>&nbsp;
+            <span className="small i-code">0xe84c</span>
+          </div>
+          {/* <div className="col-xs-12 col-sm-6">
+            <i className="icon-github" />
+            <span className="i-name">icon-github</span>&nbsp;
+            <span className="small i-code">0xe892</span>
+          </div> */}
+        </div>
       </div>
     </div>
   </Layout>

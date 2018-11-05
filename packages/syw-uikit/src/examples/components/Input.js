@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { Input, InputNumber, Select, Button } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
+const InputGroup = Input.Group;
+const { Option } = Select;
+
 const Inputs = ({ layout: Layout }) => (
   <Layout>
     <div className="row">
@@ -382,6 +385,29 @@ const Inputs = ({ layout: Layout }) => (
                 </p>
               </div>
             </div>
+
+            <div className="col-xs-12 col-sm-12">
+              <div className="form-group">
+                <label className="form-group__title">并联方式</label>
+                <InputGroup compact>
+                  <Select style={{ width: "33.333%" }}>
+                    <Option value="Option1-1">Option1-1</Option>
+                    <Option value="Option1-2">Option1-2</Option>
+                  </Select>
+                  <Select style={{ width: "33.333%" }}>
+                    <Option value="Option2-1">Option2-1</Option>
+                    <Option value="Option2-2">Option2-2</Option>
+                  </Select>
+                  <Select style={{ width: "33.333%" }}>
+                    <Option value="Option3-1">Option3-1</Option>
+                    <Option value="Option23-2">Option3-2</Option>
+                  </Select>
+                </InputGroup>
+                <p className="small form-group__message">
+                  收取到的验证码30秒有效
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -669,6 +695,33 @@ const Inputs = ({ layout: Layout }) => (
                 </div>
               </div>
             </div>
+
+            <div className="col-xs-12">
+              <div className="form-group-with-btn">
+                <label className="form-group__title">并联无间隙例子</label>
+                <div className="input-cta">
+                  <InputGroup compact>
+                    <Select style={{ width: "33.3339%" }}>
+                      <Option value="Option1-1">Option1-1</Option>
+                      <Option value="Option1-2">Option1-2</Option>
+                    </Select>
+                    <Select style={{ width: "33.3339%" }}>
+                      <Option value="Option2-1">Option2-1</Option>
+                      <Option value="Option2-2">Option2-2</Option>
+                    </Select>
+                    <Select style={{ width: "33.3339%" }}>
+                      <Option value="Option3-1">Option3-1</Option>
+                      <Option value="Option23-2">Option3-2</Option>
+                    </Select>
+                  </InputGroup>
+                  <span className="input-cta-btn input-cta-btn--no-gap">
+                    <Button type="primary" size="small">
+                      查看
+                    </Button>
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <Snippet language="html">
@@ -753,6 +806,119 @@ const Inputs = ({ layout: Layout }) => (
 </div>`}
           </Snippet>
         </div>
+
+        <div className="bs-docs-section">
+          <h6 className="page-header">Large size style</h6>
+          <div className="bs-example">
+            <div className="row">
+              <div className="col-xs-12 col-sm-6">
+                <Select
+                  size="large"
+                  placeholder="目的地"
+                  dropdownClassName="ant-select-dropdown--large"
+                >
+                  <Option value="Option1-1">中国</Option>
+                  <Option value="Option1-2">新西兰</Option>
+                </Select>
+              </div>
+
+              <div className="col-xs-12 margin-top-20">
+                <div className="form-group-with-btn visa-filter">
+                  <div className="input-cta">
+                    <InputGroup compact>
+                      <Select
+                        size="large"
+                        placeholder="选择国家签证"
+                        style={{ width: "33.3339%" }}
+                        dropdownClassName="ant-select-dropdown--large"
+                      >
+                        <Option value="Option1-1">中国签证</Option>
+                        <Option value="Option1-2">新西兰签证</Option>
+                      </Select>
+                      <Select
+                        size="large"
+                        placeholder="所在地"
+                        style={{ width: "33.3339%" }}
+                        dropdownClassName="ant-select-dropdown--large"
+                      >
+                        <Option value="Option2-1">新西兰</Option>
+                        <Option value="Option2-2">新西兰境外</Option>
+                      </Select>
+                      <Select
+                        size="large"
+                        placeholder="签证类型"
+                        style={{ width: "33.3339%" }}
+                        dropdownClassName="ant-select-dropdown--large"
+                      >
+                        <Option value="Option3-1">中国公民旅游签证</Option>
+                        <Option value="Option3-2">中国公民探亲签证</Option>
+                        <Option value="Option3-3">中国公民游学签证</Option>
+                      </Select>
+                    </InputGroup>
+                    <span className="input-cta-btn input-cta-btn--no-gap">
+                      <Button type="primary" size="small">
+                        查看
+                      </Button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Snippet language="html">
+            {`<Select
+  size="large"
+  placeholder="目的地"
+  dropdownClassName="ant-select-dropdown--large"
+>
+  <Option value="Option1-1">中国</Option>
+  <Option value="Option1-2">新西兰</Option>
+</Select>
+
+<!--联排样式-->
+<div className="form-group-with-btn visa-filter">
+  <div className="input-cta">
+    <InputGroup compact>
+      <Select
+        size="large"
+        placeholder="选择国家签证"
+        style={{ width: "33.3339%" }}
+        dropdownClassName="ant-select-dropdown--large"
+      >
+        <Option value="Option1-1">中国签证</Option>
+        <Option value="Option1-2">新西兰签证</Option>
+      </Select>
+      <Select
+        size="large"
+        placeholder="所在地"
+        style={{ width: "33.3339%" }}
+        dropdownClassName="ant-select-dropdown--large"
+      >
+        <Option value="Option2-1">新西兰</Option>
+        <Option value="Option2-2">新西兰境外</Option>
+      </Select>
+      <Select
+        size="large"
+        placeholder="签证类型"
+        style={{ width: "33.3339%" }}
+        dropdownClassName="ant-select-dropdown--large"
+      >
+        <Option value="Option3-1">中国公民旅游签证</Option>
+        <Option value="Option3-2">中国公民探亲签证</Option>
+        <Option value="Option3-3">中国公民游学签证</Option>
+      </Select>
+    </InputGroup>
+    <span className="input-cta-btn input-cta-btn--no-gap">
+      <Button type="primary" size="small">
+        查看
+      </Button>
+    </span>
+  </div>
+</div>
+`}
+          </Snippet>
+        </div>
       </div>
     </div>
   </Layout>
@@ -761,5 +927,4 @@ const Inputs = ({ layout: Layout }) => (
 Inputs.propTypes = {
   layout: PropTypes.any
 };
-
 export default Inputs;
