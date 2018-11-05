@@ -108,6 +108,7 @@
   font-weight: inherit;
 }
 
+/*Large select dropdown style*/
 .ant-select-lg {
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
   .ant-select-selection {
@@ -124,9 +125,7 @@
   .ant-select-arrow {
     right: 13px;
   }
-  .ant-select-dropdown-menu-item {
-    padding: 7px 15px;
-  }
+
   .country-option {
     .flag-icon.large {
       @include responsive-to("mobile") {
@@ -137,3 +136,68 @@
     }
   }
 }
+
+/*Large select option style*/
+.ant-select-dropdown--large .ant-select-dropdown-menu-item {
+  padding: 14px 15px;
+  @include responsive-to('mobile') {
+    padding: 10px 15px !important;
+  }
+}
+
+/*Large visa-filter style*/
+.visa-filter {
+  & {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .ant-input-group {
+    .ant-select-lg {
+      & {
+        box-shadow: none;
+        border-right: 1px solid $semi-light-grey;
+        @include responsive-to ('mobile') {
+          width: 100% !important;
+          border-bottom: 1px solid $semi-light-grey;
+        }
+      }
+      &:last-child {
+        border-right: none;
+        @include responsive-to ('mobile') {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .input-cta {
+    & {
+      @include responsive-to ('mobile') {
+        display: inherit;
+      }
+    }
+    &-btn {
+      & {
+        @include responsive-to ('mobile') {
+          display: inherit;
+          position: absolute;
+          left: 50%;
+          margin-top: 30px;
+          margin-left: -57px;
+        }
+      }
+      button {
+        height: 60px;
+        @include responsive-to ('mobile') {
+          min-width: 115px !important;
+          height: 40px;
+          font-size: 16px;
+          line-height: 1;
+          margin-top: auto;
+        }
+      }
+    }
+  }
+
+}
+
