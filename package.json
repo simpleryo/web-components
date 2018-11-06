@@ -18,7 +18,7 @@
     "pretest": "rimraf ./packages/**/__tests__/reports",
     "test": "lerna run test --stream --parallel",
     "prepublish-packages": "yarn build",
-    "publish-packages": "sh ./npm_publish.sh"
+    "publish-packages": "bash ./npm_publish.sh"
   },
   "husky": {
     "hooks": {
