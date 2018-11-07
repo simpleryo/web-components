@@ -56,6 +56,9 @@
 
 .ant-select,
 .ant-select-dropdown-menu-item {
+  &.ant-select-dropdown-menu-item-selected {
+    font-weight: 600;
+  }
   .flag-icon {
     margin-right: 10px;
     line-height: normal;
@@ -140,7 +143,7 @@
 /*Large select option style*/
 .ant-select-dropdown--large .ant-select-dropdown-menu-item {
   padding: 14px 15px;
-  @include responsive-to('mobile') {
+  @include responsive-to("mobile") {
     padding: 10px 15px !important;
   }
 }
@@ -156,14 +159,14 @@
       & {
         box-shadow: none;
         border-right: 1px solid $semi-light-grey;
-        @include responsive-to ('mobile') {
+        @include responsive-to("mobile") {
           width: 100% !important;
           border-bottom: 1px solid $semi-light-grey;
         }
       }
       &:last-child {
         border-right: none;
-        @include responsive-to ('mobile') {
+        @include responsive-to("mobile") {
           border-bottom: none;
         }
       }
@@ -172,13 +175,13 @@
 
   .input-cta {
     & {
-      @include responsive-to ('mobile') {
+      @include responsive-to("mobile") {
         display: inherit;
       }
     }
     &-btn {
       & {
-        @include responsive-to ('mobile') {
+        @include responsive-to("mobile") {
           display: inherit;
           position: absolute;
           left: 50%;
@@ -188,7 +191,7 @@
       }
       button {
         height: 60px;
-        @include responsive-to ('mobile') {
+        @include responsive-to("mobile") {
           min-width: 115px !important;
           height: 40px;
           font-size: 16px;
@@ -198,6 +201,4 @@
       }
     }
   }
-
 }
-
