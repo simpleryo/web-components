@@ -1,6 +1,6 @@
 {
   "name": "@simpleryo/syw-uikit",
-  "version": "0.5.10",
+  "version": "0.5.11",
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
   "main": "lib/syw-uikit.js",
   "module": "src/js/syw-uikit.js",
