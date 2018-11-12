@@ -152,6 +152,9 @@
 .visa-filter {
   & {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    @include responsive-to("mobile") {
+      box-shadow: none;
+    }
   }
 
   .ant-input-group {
@@ -168,7 +171,13 @@
         border-right: none;
         @include responsive-to("mobile") {
           border-bottom: none;
+          border-right: 1px solid $semi-light-grey;
         }
+      }
+    }
+    &.ant-input-group-compact {
+      @include responsive-to("mobile") {
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -183,7 +192,7 @@
       & {
         @include responsive-to("mobile") {
           display: inherit;
-          position: absolute;
+          /*position: absolute;*/
           left: 50%;
           margin-top: 30px;
           margin-left: -57px;
