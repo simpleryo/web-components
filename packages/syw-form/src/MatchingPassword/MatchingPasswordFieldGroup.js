@@ -49,20 +49,21 @@ class MatchingPasswordFieldGroup extends Component {
       R.path([MATCHED_FIELD_NAME], errors) ===
       RuleTypes.RULE_COMPARATION_EQUALS;
 
-    if (
-      this.state.isEqual === true &&
-      (pwdHasComparisonError || matchedPwdHasComparisonErr)
-    ) {
-      const pwd = R.path([PASSWORD_FIELD_NAME], values);
-      const matchedPwd = R.path([MATCHED_FIELD_NAME], values);
-      dispatchUpdateField(
-        { name: PASSWORD_FIELD_NAME, value: pwd, error: null },
-        formName
-      );
-      dispatchUpdateField(
-        { name: MATCHED_FIELD_NAME, value: matchedPwd, error: null },
-        formName
-      );
+    if (this.state.isEqual === true) {
+      if (pwdHasComparisonError) {
+        const pwd = R.path([PASSWORD_FIELD_NAME], values);
+        dispatchUpdateField(
+          { name: PASSWORD_FIELD_NAME, value: pwd, error: null },
+          formName
+        );
+      }
+      if (matchedPwdHasComparisonErr) {
+        const matchedPwd = R.path([MATCHED_FIELD_NAME], values);
+        dispatchUpdateField(
+          { name: MATCHED_FIELD_NAME, value: matchedPwd, error: null },
+          formName
+        );
+      }
     }
   }
 
@@ -102,14 +103,12 @@ class MatchingPasswordFieldGroup extends Component {
       }
     });
 
-    if (this.state.passwordError && R.not(this.state.isEqual)) {
-      if (this.state.passwordError === RuleTypes.RULE_COMPARATION_EQUALS) {
-        themeErrors[1] = this.state.passwordError;
-        themeRules[1] = RULES[PASSWORD_FIELD_NAME];
-      } else {
-        themeErrors[0] = this.state.passwordError;
-        themeRules[0] = RULES[PASSWORD_FIELD_NAME];
-      }
+    if (this.state.passwordError === RuleTypes.RULE_COMPARATION_EQUALS) {
+      themeErrors[1] = this.state.passwordError;
+      themeRules[1] = RULES[PASSWORD_FIELD_NAME];
+    } else {
+      themeErrors[0] = this.state.passwordError;
+      themeRules[0] = RULES[PASSWORD_FIELD_NAME];
     }
 
     if (this.state.matchedPasswordError && R.not(this.state.isEqual)) {
