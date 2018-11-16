@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Snippet } from "./Snippet";
 import { Button, notification } from "../../js/syw-uikit";
 
@@ -19,8 +19,8 @@ const openNotificationWithIcon = type => {
   });
 };
 
-const Notification = ({ layout: Layout }) => (
-  <Layout>
+const Notification = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Notification 通知提醒框</h4>
@@ -28,6 +28,7 @@ const Notification = ({ layout: Layout }) => (
           全局展示通知提醒信息。详细API请查询&nbsp;
           <a
             className="link link__highlight"
+            rel="noopener noreferrer"
             href="https://ant.design/components/notification-cn/"
             target="_blank"
           >
@@ -145,7 +146,7 @@ ReactDOM.render(
 `}
       </Snippet>
     </div>
-  </Layout>
+  </Fragment>
 );
 
 export default Notification;

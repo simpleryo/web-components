@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 import CircleIcon from "../../js/components/CircleIcon";
 import { Snippet } from "./Snippet";
 
-const Colours = ({ layout: Layout }) => (
-  <Layout>
+const Colours = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h3 className="margin-bottom-20">Colours</h3>
@@ -209,11 +208,7 @@ const Colours = ({ layout: Layout }) => (
         </Snippet>
       </div>
     </div>
-  </Layout>
+  </Fragment>
 );
-
-Colours.propTypes = {
-  layout: PropTypes.node
-};
 
 export default Colours;

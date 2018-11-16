@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from "react";
 import moment from "moment";
 import { Snippet } from "./Snippet";
 import { DatePicker, DatePickerRange } from "../../js/syw-uikit";
@@ -29,9 +28,8 @@ export default class DatepickerDemo extends Component {
     });
   };
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">DatePicker 日期选择框</h4>
@@ -130,11 +128,7 @@ export default class DatepickerDemo extends Component {
             </Snippet>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }
-
-DatepickerDemo.propTypes = {
-  layout: PropTypes.any
-};

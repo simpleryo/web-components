@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 import { Card } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
@@ -12,8 +11,8 @@ const gridStyle = {
 
 const { Meta } = Card;
 
-const Cards = ({ layout: Layout }) => (
-  <Layout>
+const Cards = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Card 卡片</h4>
@@ -214,10 +213,7 @@ const { Meta } = Card;
 `}
       </Snippet>
     </div>
-  </Layout>
+  </Fragment>
 );
 
-Cards.propTypes = {
-  layout: PropTypes.any
-};
 export default Cards;

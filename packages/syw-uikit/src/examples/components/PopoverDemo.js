@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from "react";
 import { Input, Popover, Badge, Avatar } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
@@ -38,9 +37,8 @@ const content = (
 
 class PopoverDemo extends Component {
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Popover 气泡卡片</h4>
@@ -207,12 +205,9 @@ const content = (
             </Snippet>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }
 
-PopoverDemo.propTypes = {
-  layout: PropTypes.any
-};
 export default PopoverDemo;

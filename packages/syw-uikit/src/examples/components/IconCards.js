@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 import { CircleIcon, IconCard } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
-const IconCards = ({ layout: Layout }) => (
-  <Layout>
+const IconCards = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h3>Icon cards</h3>
@@ -212,10 +211,7 @@ const IconCards = ({ layout: Layout }) => (
         </Snippet>
       </div>
     </div>
-  </Layout>
+  </Fragment>
 );
 
-IconCards.propTypes = {
-  layout: PropTypes.any
-};
 export default IconCards;

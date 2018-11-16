@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Radio } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
-const Radios = ({ layout: Layout }) => (
-  <Layout>
+const Radios = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Radio button</h4>
@@ -11,6 +11,7 @@ const Radios = ({ layout: Layout }) => (
           详细API请查询{" "}
           <a
             className="link link__highlight"
+            rel="noopener noreferrer"
             href="https://ant.design/components/checkbox-cn/"
             target="_blank"
           >
@@ -262,7 +263,7 @@ const Radios = ({ layout: Layout }) => (
         </div>
       </div>
     </div>
-  </Layout>
+  </Fragment>
 );
 
 export default Radios;

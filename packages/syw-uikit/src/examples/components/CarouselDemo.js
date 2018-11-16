@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import { map } from "ramda";
 import { Snippet } from "./Snippet";
 import { Carousel, Button } from "../../js/syw-uikit";
@@ -17,6 +18,10 @@ class CustomSlide extends Component {
     );
   }
 }
+CustomSlide.propTypes = {
+  index: PropTypes.number,
+  children: PropTypes.node
+};
 
 export default class CarouselDemo extends Component {
   constructor(props) {
@@ -40,7 +45,6 @@ export default class CarouselDemo extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
     const settings = {
       infinite: false,
       slidesToShow: 4,
@@ -65,7 +69,7 @@ export default class CarouselDemo extends Component {
       ]
     };
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Carousel</h4>
@@ -73,6 +77,7 @@ export default class CarouselDemo extends Component {
               更多API，请参考{" "}
               <a
                 className="link link__highlight"
+                rel="noopener noreferrer"
                 href="https://react-slick.neostack.com/docs/api"
                 target="_blank"
               >
@@ -165,7 +170,7 @@ export default class CarouselDemo extends Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Cascader } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
@@ -57,8 +57,8 @@ function onChange(value) {
   console.log(value);
 }
 
-const CascaderDemo = ({ layout: Layout }) => (
-  <Layout>
+const CascaderDemo = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Cascader级联选择</h4>
@@ -77,6 +77,7 @@ const CascaderDemo = ({ layout: Layout }) => (
           详细API请查询{" "}
           <a
             className="link link__highlight"
+            rel="noopener noreferrer"
             href="http://2x.ant.design/components/cascader/"
             target="_blank"
           >
@@ -126,7 +127,7 @@ const CascaderDemo = ({ layout: Layout }) => (
 `}
       </Snippet>
     </div>
-  </Layout>
+  </Fragment>
 );
 
 export default CascaderDemo;

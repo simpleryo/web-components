@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from "react";
 import { compose, replace } from "ramda";
 import { Snippet } from "./Snippet";
 import { Markdown, Input } from "../../js/syw-uikit";
@@ -18,10 +17,9 @@ export default class MarkdownDemo extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
     const { text } = this.state;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Markdown Render</h4>
@@ -106,11 +104,7 @@ export default class MarkdownDemo extends Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }
-
-MarkdownDemo.propTypes = {
-  layout: PropTypes.any
-};

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Snippet } from "./Snippet";
 import { AppCard } from "../../js/syw-uikit";
 
@@ -9,20 +9,14 @@ const hint = (
 );
 
 export default class AppCards extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(event) {
+  handleClick = event => {
     event.preventDefault();
     console.log(event.currentTarget);
-  }
+  };
 
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <h4 className="margin-bottom-20">Application Cards</h4>
         <hr />
 
@@ -96,7 +90,7 @@ const hint = (<div><i className="icon-timer" />所需时间约3分钟</div>);
   onClick={this.handleClick}
 />`}
         </Snippet>
-      </Layout>
+      </Fragment>
     );
   }
 }

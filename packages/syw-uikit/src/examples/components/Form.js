@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from "react";
 import {
   Input,
   InputNumber,
@@ -73,9 +72,8 @@ export default class Form extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Form Elements</h4>
@@ -1049,11 +1047,7 @@ export default class Form extends Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }
-
-Form.propTypes = {
-  layout: PropTypes.any
-};

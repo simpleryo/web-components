@@ -1,9 +1,9 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
+import R from "ramda";
+import createHistory from "history/createBrowserHistory";
 
-import GeneralLayout from "./layout/GeneralLayout";
-import FullWidthLayout from "./layout/FullWidthLayout";
-
+import DemoLayout from "./layout";
 import Typography from "./components/Typography";
 import Colours from "./components/Colours";
 import Icons from "./components/Icons";
@@ -37,130 +37,240 @@ import MarkdownDemo from "./components/MarkdownDemo";
 import PromotionCodeDemo from "./components/PromotionCodeDemo";
 import Avatars from "./components/AvatarDemo";
 import Badges from "./components/BadgeDemo";
+import LayoutDemo from "./components/LayoutDemo";
 
+const browserHistory = createHistory();
+
+browserHistory.listen(() => {
+  window.scrollTo(0, 0);
+});
+
+const ROUTE_CONFIGS = [
+  {
+    path: "/",
+    icon: "icon-translate",
+    label: "Typography",
+    Component: Typography
+  },
+  {
+    path: "/colours",
+    icon: "icon-picture",
+    label: "Colours",
+    Component: Colours
+  },
+  {
+    path: "/icons",
+    icon: "icon-photo-success",
+    label: "Icons",
+    Component: Icons
+  },
+  {
+    path: "/circle-icons",
+    icon: "icon-info",
+    label: "CircleIcon",
+    Component: CircleIcons
+  },
+  {
+    path: "/buttons",
+    icon: "icon-valid-circle",
+    label: "Button",
+    Component: Buttons
+  },
+  {
+    path: "/image-banners",
+    icon: "icon-picture",
+    label: "ImageBanner",
+    Component: ImageBanners
+  },
+  {
+    path: "/tabs",
+    icon: "icon-files",
+    label: "Tab",
+    Component: TabsDemo
+  },
+  {
+    path: "/contentCards",
+    icon: "icon-terms",
+    label: "ContentCard",
+    Component: ContentCards
+  },
+  {
+    path: "/appCards",
+    icon: "icon-valid-circle",
+    label: "AppCard",
+    Component: AppCards
+  },
+  {
+    path: "/iconCards",
+    icon: "icon-error-circle",
+    label: "IconCard",
+    Component: IconCards
+  },
+  {
+    path: "/collapse",
+    icon: "icon-files",
+    label: "Collapse",
+    Component: CollapseDemo
+  },
+  {
+    path: "/modal",
+    icon: "icon-folder-open",
+    label: "Modal",
+    Component: ModalDemo
+  },
+  {
+    path: "/alert",
+    icon: "icon-error",
+    label: "Alert",
+    Component: Alert
+  },
+  {
+    path: "/notification",
+    icon: "icon-error-circle",
+    label: "Notification",
+    Component: NotificationDemo
+  },
+  {
+    path: "/progress-bar",
+    icon: "icon-hide",
+    label: "ProgressBar",
+    Component: ProgressBar
+  },
+  {
+    path: "/step-progress",
+    icon: "icon-online",
+    label: "StepProgress",
+    Component: StepProgress
+  },
+  {
+    path: "/app-group",
+    icon: "icon-terms",
+    label: "AppGroup",
+    Component: AppGroupDemo
+  },
+  {
+    path: "/input",
+    icon: "icon-terms",
+    label: "Input",
+    Component: Input
+  },
+  {
+    path: "/datepicker",
+    icon: "icon-calendar",
+    label: "Datepicker",
+    Component: DatepickerDemo
+  },
+  {
+    path: "/tooltip",
+    icon: "icon-info",
+    label: "Tooltip",
+    Component: TooltipDemo
+  },
+  {
+    path: "/popover",
+    icon: "icon-info",
+    label: "Popover",
+    Component: PopoverDemo
+  },
+  {
+    path: "/select",
+    icon: "icon-terms",
+    label: "Select",
+    Component: SelectDemo
+  },
+  {
+    path: "/radio",
+    icon: "icon-terms",
+    label: "Radio",
+    Component: Radio
+  },
+  {
+    path: "/checkbox",
+    icon: "icon-terms",
+    label: "Checkbox",
+    Component: Checkbox
+  },
+  {
+    path: "/upload-file",
+    icon: "icon-files",
+    label: "Upload",
+    Component: UploadFile
+  },
+  {
+    path: "/card",
+    icon: "icon-id-card",
+    label: "Card",
+    Component: Card
+  },
+  {
+    path: "/cascader",
+    icon: "icon-terms",
+    label: "Cascader",
+    Component: CascaderDemo
+  },
+  {
+    path: "/carousel",
+    icon: "icon-terms",
+    label: "Carousel",
+    Component: CarouselDemo
+  },
+  {
+    path: "/auto-complete",
+    icon: "icon-delicate",
+    label: "AutoComplete",
+    Component: AutoCompleteDemo
+  },
+  {
+    path: "/markdown",
+    icon: "icon-delicate",
+    label: "Markdown",
+    Component: MarkdownDemo
+  },
+  {
+    path: "/promotion-code",
+    icon: "icon-post",
+    label: "PromotionCode",
+    Component: PromotionCodeDemo
+  },
+  {
+    path: "/avatars",
+    icon: "icon-user",
+    label: "Avatar",
+    Component: Avatars
+  },
+  {
+    path: "/badge",
+    icon: "icon-user",
+    label: "Badge",
+    Component: Badges
+  },
+  {
+    path: "/layout",
+    icon: "icon-online",
+    label: "Layout",
+    Component: LayoutDemo
+  }
+];
 const App = () => (
-  <BrowserRouter>
+  <Router history={browserHistory}>
     <Switch>
-      <Route
-        exact
-        path="/"
-        component={() => <Typography layout={GeneralLayout} />}
-      />
-      <Route
-        path="/colours"
-        component={() => <Colours layout={GeneralLayout} />}
-      />
-      <Route path="/icons" component={() => <Icons layout={GeneralLayout} />} />
-      <Route
-        path="/circle-icons"
-        component={() => <CircleIcons layout={GeneralLayout} />}
-      />
-      <Route
-        path="/buttons"
-        component={() => <Buttons layout={GeneralLayout} />}
-      />
-      <Route
-        path="/image-banners"
-        component={() => <ImageBanners layout={FullWidthLayout} />}
-      />
-      <Route
-        path="/tabs-demo"
-        component={() => <TabsDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/contentCards"
-        component={() => <ContentCards layout={GeneralLayout} />}
-      />
-      <Route
-        path="/appCards"
-        component={() => <AppCards layout={GeneralLayout} />}
-      />
-      <Route
-        path="/iconCards"
-        component={() => <IconCards layout={GeneralLayout} />}
-      />
-      <Route
-        path="/collapse-demo"
-        component={() => <CollapseDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/modal-demo"
-        component={() => <ModalDemo layout={GeneralLayout} />}
-      />
-      <Route path="/alert" component={() => <Alert layout={GeneralLayout} />} />
-      <Route
-        path="/notification"
-        component={() => <NotificationDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/progress-bar"
-        component={() => <ProgressBar layout={GeneralLayout} />}
-      />
-      <Route
-        path="/step-progress"
-        component={() => <StepProgress layout={GeneralLayout} />}
-      />
-      <Route
-        path="/app-group"
-        component={() => <AppGroupDemo layout={GeneralLayout} />}
-      />
-      <Route path="/input" component={() => <Input layout={GeneralLayout} />} />
-      <Route
-        path="/Datepicker"
-        component={() => <DatepickerDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/tooltip"
-        component={() => <TooltipDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/popover-demo"
-        component={() => <PopoverDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/select"
-        component={() => <SelectDemo layout={GeneralLayout} />}
-      />
-      <Route path="/radio" component={() => <Radio layout={GeneralLayout} />} />
-      <Route
-        path="/checkbox"
-        component={() => <Checkbox layout={GeneralLayout} />}
-      />
-      <Route
-        path="/upload-file"
-        component={() => <UploadFile layout={GeneralLayout} />}
-      />
-      <Route path="/card" component={() => <Card layout={GeneralLayout} />} />
-      <Route
-        path="/cascader"
-        component={() => <CascaderDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/carousel"
-        component={() => <CarouselDemo layout={FullWidthLayout} />}
-      />
-      <Route
-        path="/auto-complete"
-        component={() => <AutoCompleteDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/markdown"
-        component={() => <MarkdownDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/promotion-code"
-        component={() => <PromotionCodeDemo layout={GeneralLayout} />}
-      />
-      <Route
-        path="/avatar"
-        component={() => <Avatars layout={GeneralLayout} />}
-      />
-      <Route
-        path="/badge"
-        component={() => <Badges layout={GeneralLayout} />}
-      />
+      {R.map(
+        ({ path, Component }, index) => (
+          <Route
+            key={index}
+            path={path}
+            exact
+            render={props => (
+              <DemoLayout menuConfigs={ROUTE_CONFIGS} {...props}>
+                <Component {...props} />
+              </DemoLayout>
+            )}
+          />
+        ),
+        ROUTE_CONFIGS
+      )}
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 export default App;

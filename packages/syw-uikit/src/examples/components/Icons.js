@@ -1,8 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 
-const Icons = ({ layout: Layout }) => (
-  <Layout>
+const Icons = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h3 className="margin-bottom-20">Icons</h3>
@@ -616,9 +615,6 @@ const Icons = ({ layout: Layout }) => (
         </div>
       </div>
     </div>
-  </Layout>
+  </Fragment>
 );
-Icons.propTypes = {
-  layout: PropTypes.node
-};
 export default Icons;

@@ -1,15 +1,16 @@
 import React from "react";
 import { Snippet } from "./Snippet";
 
-const Typography = ({ layout: Layout }) => (
-  <Layout>
+const Typography = () => (
+  <div>
     <div className="row">
       <div className="col-xs-12">
         <h3 className="margin-bottom-20">Typography</h3>
         <p className="full-width margin-bottom-20">
-          中文字体选择依次为'苹方'，'冬青黑体'，'微软雅黑'。英文字体为{" "}
+          {"中文字体选择依次为'苹方'，'冬青黑体'，'微软雅黑'。英文字体为 "}
           <a
             className="link link__highlight"
+            rel="noopener noreferrer"
             href="http://www.google.com/fonts/specimen/Open+Sans"
             target="_blank"
           >
@@ -156,12 +157,18 @@ const Typography = ({ layout: Layout }) => (
           </h5>
         </div>
         <div className="bs-example">
-          <a className="link" href="http://www.google.com" target="_blank">
+          <a
+            className="link"
+            rel="noopener noreferrer"
+            href="http://www.google.com"
+            target="_blank"
+          >
             普通链接 我的颜色是:#20B1EE
           </a>
           <br />
           <a
             className="link link__deleted"
+            rel="noopener noreferrer"
             href="http://www.google.com"
             target="_blank"
           >
@@ -170,6 +177,7 @@ const Typography = ({ layout: Layout }) => (
           <br />
           <a
             className="link link__highlight"
+            rel="noopener noreferrer"
             href="http://www.google.com"
             target="_blank"
           >
@@ -178,6 +186,7 @@ const Typography = ({ layout: Layout }) => (
           <div className="bg--mid-grey display-table padding-10">
             <a
               className="link link__highlight--white"
+              rel="noopener noreferrer"
               href="http://www.google.com"
               target="_blank"
             >
@@ -236,7 +245,7 @@ const Typography = ({ layout: Layout }) => (
         </Snippet>
       </div>
     </div>
-  </Layout>
+  </div>
 );
 
 export default Typography;

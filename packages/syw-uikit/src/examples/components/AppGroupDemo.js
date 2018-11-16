@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { AppGroup, AppGroupTitle, Input, Radio } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
-const AppGroupDemo = ({ layout: Layout }) => (
-  <Layout>
+const AppGroupDemo = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Step form title 表单步骤标题</h4>
@@ -58,7 +58,7 @@ const AppGroupDemo = ({ layout: Layout }) => (
         <h5>
           <i>Group + Icon + Children</i>
         </h5>
-        <p>icon: {`{"type": "text", "content": "1"}`}</p>
+        <p>icon: {'{"type": "text", "content": "1"}'}</p>
       </div>
       <div className="bs-example">
         <AppGroup
@@ -96,8 +96,8 @@ const AppGroupDemo = ({ layout: Layout }) => (
           <i>Group + Children</i>
         </h5>
         <p>icon: null</p>
-        <p>title: "Group Title"</p>
-        <p>description: ""</p>
+        <p>{'title: "Group Title"'}</p>
+        <p>{"description: "}</p>
       </div>
       <div className="bs-example">
         <AppGroup title="是否有兵役历史">
@@ -123,9 +123,9 @@ const AppGroupDemo = ({ layout: Layout }) => (
         <h5>
           <i>Empty Indent Group + Children</i>
         </h5>
-        <p>icon: {`{ type: "indent_group_content" }`}</p>
-        <p>title: ""</p>
-        <p>description: ""</p>
+        <p>icon: {'{ type: "indent_group_content" }'}</p>
+        <p>title: </p>
+        <p>description: </p>
       </div>
       <div className="bs-example">
         <AppGroup icon={{ type: "indent_group_content" }}>
@@ -172,7 +172,7 @@ const AppGroupDemo = ({ layout: Layout }) => (
 />`}
       </Snippet>
     </div>
-  </Layout>
+  </Fragment>
 );
 
 export default AppGroupDemo;
