@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Upload, message, Button, AppGroup } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
@@ -43,12 +43,6 @@ const defaultFileList = [
   }
 ];
 
-function getBase64(img, callback) {
-  const reader = new FileReader();
-  reader.addEventListener("load", () => callback(reader.result));
-  reader.readAsDataURL(img);
-}
-
 export default class UploadFile extends Component {
   constructor(props) {
     super(props);
@@ -61,9 +55,8 @@ export default class UploadFile extends Component {
     this.setState({ file: name });
   };
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Upload File</h4>
@@ -71,6 +64,7 @@ export default class UploadFile extends Component {
               文件选择上传控件，详细API请查询{" "}
               <a
                 className="link link__highlight"
+                rel="noopener noreferrer"
                 href="https://ant.design/components/upload-cn/"
                 target="_blank"
               >
@@ -261,7 +255,7 @@ export default class UploadFile extends Component {
             </Snippet>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }

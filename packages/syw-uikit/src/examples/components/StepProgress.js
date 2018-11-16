@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 import { map } from "ramda";
 import { Steps } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
@@ -18,8 +17,8 @@ const dummySteps2 = [
   { id: 2, title: "完成申请", description: "完成申请描述" }
 ];
 
-const StepProgress = ({ layout: Layout }) => (
-  <Layout>
+const StepProgress = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Step progress 步骤条</h4>
@@ -247,10 +246,7 @@ const StepProgress = ({ layout: Layout }) => (
         </Snippet>
       </div>
     </div>
-  </Layout>
+  </Fragment>
 );
 
-StepProgress.propTypes = {
-  layout: PropTypes.any
-};
 export default StepProgress;

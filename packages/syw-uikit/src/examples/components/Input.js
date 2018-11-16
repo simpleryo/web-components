@@ -1,13 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 import { Input, InputNumber, Select, Button } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
 const InputGroup = Input.Group;
 const { Option } = Select;
 
-const Inputs = ({ layout: Layout }) => (
-  <Layout>
+const Inputs = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Form Elements</h4>
@@ -921,10 +920,7 @@ const Inputs = ({ layout: Layout }) => (
         </div>
       </div>
     </div>
-  </Layout>
+  </Fragment>
 );
 
-Inputs.propTypes = {
-  layout: PropTypes.any
-};
 export default Inputs;

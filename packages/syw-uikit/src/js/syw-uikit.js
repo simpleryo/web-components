@@ -14,6 +14,7 @@ import CountDown from "./components/CountDown";
 import Alert from "./components/Alert";
 import SignaturePad from "./components/SignaturePad";
 import PromotionCode from "./components/PromotionCode";
+import Layout from "./components/Layout";
 
 export { default as Button } from "antd/es/button";
 export { default as Tabs } from "antd/es/tabs";
@@ -41,6 +42,9 @@ export { default as Breadcrumb } from "antd/es/breadcrumb";
 export { default as Avatar } from "antd/es/avatar";
 export { default as Badge } from "antd/es/badge";
 export { default as Table } from "antd/es/table";
+export { default as AntdLayout } from "antd/es/layout";
+export { default as Menu } from "antd/es/menu";
+export { default as Drawer } from "antd/es/drawer";
 
 export {
   Alert,
@@ -60,5 +64,6 @@ export {
   DatePickerRange,
   SignaturePad,
   CountDown,
-  PromotionCode
+  PromotionCode,
+  Layout
 };

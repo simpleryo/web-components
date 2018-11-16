@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Button, ContentCard } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
-const ContentCards = ({ layout: Layout }) => (
-  <Layout>
+const ContentCards = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Content card</h4>
@@ -135,7 +135,7 @@ const ContentCards = ({ layout: Layout }) => (
 `}
       </Snippet>
     </div>
-  </Layout>
+  </Fragment>
 );
 
 export default ContentCards;

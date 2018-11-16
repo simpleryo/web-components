@@ -1,13 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 import { ImageBanner, CrossCenterContent, Button } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 import bg1 from "../../assets/imgs/banners/heroimage-NZ.jpg";
 import bg2 from "../../assets/imgs/banners/hero-image-japan.jpg";
 import bgWorldMap from "../../assets/imgs/world-map.svg";
 
-const ImageBanners = ({ layout: Layout }) => (
-  <Layout>
+const ImageBanners = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Image banner 横幅</h4>
@@ -367,10 +366,7 @@ const ImageBanners = ({ layout: Layout }) => (
 `}
       </Snippet>
     </div>
-  </Layout>
+  </Fragment>
 );
 
-ImageBanners.propTypes = {
-  layout: PropTypes.any
-};
 export default ImageBanners;

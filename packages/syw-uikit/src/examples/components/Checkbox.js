@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Checkbox } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
@@ -65,9 +65,8 @@ export default class Form extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Checkbox</h4>
@@ -75,6 +74,7 @@ export default class Form extends Component {
               详细API请查询{" "}
               <a
                 className="link link__highlight"
+                rel="noopener noreferrer"
                 href="https://ant.design/components/checkbox-cn/"
                 target="_blank"
               >
@@ -339,7 +339,7 @@ export default class Form extends Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }

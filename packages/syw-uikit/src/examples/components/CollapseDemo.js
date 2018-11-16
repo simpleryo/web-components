@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { map } from "ramda";
 import { Snippet } from "./Snippet";
 import { Button, Collapse } from "../../js/syw-uikit";
@@ -94,9 +94,8 @@ export default class CollapseDemo extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Collapse</h4>
@@ -104,6 +103,7 @@ export default class CollapseDemo extends Component {
               More Details in
               <a
                 className="link link__highlight"
+                rel="noopener noreferrer"
                 href="https://ant.design/components/collapse-cn/"
                 target="_blank"
               >
@@ -160,7 +160,7 @@ export default class CollapseDemo extends Component {
 </Collapse>`}
           </Snippet>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }

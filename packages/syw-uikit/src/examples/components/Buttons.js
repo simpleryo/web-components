@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Button } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
@@ -13,9 +13,8 @@ export default class Buttons extends Component {
   startLoading = () => this.setState({ loading: true });
 
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Buttons 按钮</h4>
@@ -25,6 +24,7 @@ export default class Buttons extends Component {
               标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。详细API请查询{" "}
               <a
                 className="link link__highlight"
+                rel="noopener noreferrer"
                 href="https://ant.design/components/button-cn/"
                 target="_blank"
               >
@@ -217,7 +217,7 @@ export default class Buttons extends Component {
 </div>`}
           </Snippet>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }

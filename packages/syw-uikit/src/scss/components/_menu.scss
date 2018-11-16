@@ -1,0 +1,14 @@
+.ant-menu {
+  &.ant-menu-light {
+    .ant-menu-item-selected {
+      background-color: $light-grey;
+      a:focus {
+        color: $pink;
+      }
+    }
+  }
+  &.ant-menu-inline,
+  &.ant-menu-inline-collapsed {
+    border: 0;
+  }
+}

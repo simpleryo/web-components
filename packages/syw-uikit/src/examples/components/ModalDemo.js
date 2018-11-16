@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Snippet } from "./Snippet";
 import { AppGroup, Button, Modal } from "../../js/syw-uikit";
 
@@ -43,9 +43,8 @@ export default class ModalDemo extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Modal 对话框</h4>
@@ -53,6 +52,7 @@ export default class ModalDemo extends Component {
               More Details in{" "}
               <a
                 className="link link__highlight"
+                rel="noopener noreferrer"
                 href="https://ant.design/components/modal-cn/"
                 target="_blank"
               >
@@ -93,7 +93,6 @@ export default class ModalDemo extends Component {
                           确质高建铁技强院族严参委，龙想关义入流五每资小适，争结孤伸取露本鹰业范。{" "}
                         </p>
 
-                        {/*section 1*/}
                         <AppGroup
                           icon={{ type: "text", content: "1" }}
                           stepTitle="习世多义响式格经料历方却正至"
@@ -136,7 +135,6 @@ export default class ModalDemo extends Component {
                           </div>
                         </AppGroup>
 
-                        {/*section 2*/}
                         <AppGroup
                           icon={{ type: "text", content: "2" }}
                           stepTitle="们准步类示周要中，相日级计定火"
@@ -272,7 +270,7 @@ export default class ModalDemo extends Component {
             </Snippet>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }

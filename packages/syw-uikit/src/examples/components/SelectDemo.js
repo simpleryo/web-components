@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { drop } from "ramda";
 import { Snippet } from "./Snippet";
 import { Select } from "../../js/syw-uikit";
-import { drop } from "ramda";
 
 export default class SelectDemo extends Component {
   constructor(props) {
@@ -16,9 +16,8 @@ export default class SelectDemo extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h3 className="margin-bottom-20">Select</h3>
@@ -26,6 +25,7 @@ export default class SelectDemo extends Component {
               详细API请查询{" "}
               <a
                 className="link link__highlight"
+                rel="noopener noreferrer"
                 href="https://ant.design/components/select-cn/"
                 target="_blank"
               >
@@ -159,7 +159,7 @@ const handleFilter =(input, option) => option.props.children.toLowerCase().index
             </div>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }

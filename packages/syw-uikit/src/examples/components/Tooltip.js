@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Input, Tooltip } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
@@ -13,9 +13,8 @@ const text = (
 
 class TooltipDemo extends Component {
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h4 className="margin-bottom-20">Tooltip 文字提示</h4>
@@ -25,6 +24,7 @@ class TooltipDemo extends Component {
               详细API请查询{" "}
               <a
                 className="link link__highlight"
+                rel="noopener noreferrer"
                 href="https://ant.design/components/tooltip-cn/"
                 target="_blank"
               >
@@ -108,7 +108,7 @@ class TooltipDemo extends Component {
             </Snippet>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }

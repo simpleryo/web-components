@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from "react";
 import classNames from "classnames";
 import { Snippet } from "./Snippet";
 import {
@@ -146,9 +145,8 @@ export default class TabsDemo extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <div className="row">
           <div className="col-xs-12">
             <h3 className="margin-bottom-20">Tabs</h3>
@@ -463,11 +461,7 @@ const TabPane = Tabs.TabPane;
             </Snippet>
           </div>
         </div>
-      </Layout>
+      </Fragment>
     );
   }
 }
-
-TabsDemo.propTypes = {
-  layout: PropTypes.node
-};

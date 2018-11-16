@@ -16,4 +16,5 @@ yarn.lock
 *.xml
 *.txt
 *.sh
+*.html
 assets

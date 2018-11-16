@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Snippet } from "./Snippet";
 import { Alert } from "../../js/syw-uikit";
 
-const Alerts = ({ layout: Layout }) => (
-  <Layout>
+const Alerts = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Alert 警告提示</h4>
@@ -19,6 +19,7 @@ const Alerts = ({ layout: Layout }) => (
           详细API请查询{" "}
           <a
             className="link link__highlight"
+            rel="noopener noreferrer"
             href="https://ant.design/components/alert-cn/"
             target="_blank"
           >
@@ -121,7 +122,7 @@ const Alerts = ({ layout: Layout }) => (
         </Snippet>
       </div>
     </div>
-  </Layout>
+  </Fragment>
 );
 
 export default Alerts;

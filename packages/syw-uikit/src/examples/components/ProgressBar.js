@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Progress } from "../../js/syw-uikit";
 import { Snippet } from "./Snippet";
 
-const ProgressBar = ({ layout: Layout }) => (
-  <Layout>
+const ProgressBar = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Progress bar 进度条</h4>
@@ -13,6 +13,7 @@ const ProgressBar = ({ layout: Layout }) => (
           在操作需要较长时间才能完成时，为用户显示该操作的当前进度和状态。{" "}
           <a
             className="link link__highlight"
+            rel="noopener noreferrer"
             href="https://ant.design/components/progress-cn/"
             target="_blank"
           >
@@ -105,7 +106,7 @@ const ProgressBar = ({ layout: Layout }) => (
 <Progress type="circle" percent={100} width={60} />`}
       </Snippet>
     </div>
-  </Layout>
+  </Fragment>
 );
 
 export default ProgressBar;

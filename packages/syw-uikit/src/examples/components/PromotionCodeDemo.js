@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 import PromotionCode from "../../js/components/PromotionCode";
 import { Snippet } from "./Snippet";
 
-const PromotionCodeDemo = ({ layout: Layout }) => (
-  <Layout>
+const PromotionCodeDemo = () => (
+  <Fragment>
     <div className="row">
       <div className="col-xs-12">
         <h4 className="margin-bottom-20">Promotion Code 打折码</h4>
@@ -41,10 +40,7 @@ const PromotionCodeDemo = ({ layout: Layout }) => (
 />`}
       </Snippet>
     </div>
-  </Layout>
+  </Fragment>
 );
 
-PromotionCodeDemo.propTypes = {
-  layout: PropTypes.any
-};
 export default PromotionCodeDemo;
