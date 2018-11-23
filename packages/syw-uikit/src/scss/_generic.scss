@@ -27,7 +27,7 @@ body {
     @media (min-width: 1200px) {
       width: 970px;
     }
-    @include responsive-to('mobile') {
+    @include responsive-to("mobile") {
       padding-left: 30px;
       padding-right: 30px;
     }
@@ -35,7 +35,7 @@ body {
   &__inner-wrapper {
     width: 600px;
     margin: 0 auto;
-    @include responsive-to('mobile') {
+    @include responsive-to("mobile") {
       width: 100%;
     }
   }
@@ -51,31 +51,3 @@ body {
     margin: auto;
   }
 }
-
-.display-table {
-  display: table;
-}
-
-.display-table-cell {
-  display: table-cell;
-  vertical-align: middle;
-  float: none;
-  @include responsive-to('mobile') {
-    display: block;
-    float: left;
-  }
-}
-
-.full-height {
-  height: 100%;
-}
-
-.table > thead > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > th,
-.table > tbody > tr > td,
-.table > tfoot > tr > th,
-.table > tfoot > tr > td {
-  border-top: 1px dashed #ddd;
-}
-

@@ -7,7 +7,7 @@ export default (state, action) => {
   } = action;
   let nextErrors;
 
-  if (error) {
+  if (error !== null) {
     nextErrors = {
       ...state[formName].errors,
       [name]: error

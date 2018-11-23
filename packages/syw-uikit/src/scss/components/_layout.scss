@@ -5,10 +5,10 @@
   .header {
     padding: 0;
     box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-    &.light {
-      background-color: $white;
-    }
-    .logo {
+    position: relative;
+    background-color: $white;
+    .header-logo {
+      display: inline-block;
       line-height: 58px;
       vertical-align: top;
       padding: 0 0 0 24px;
@@ -26,10 +26,17 @@
     }
   }
   .content {
-    margin: 24px 16px;
-    padding: 24px;
-    background-color: $white;
+    margin: 24px 24px 0;
     min-height: 280px;
+    .content-header {
+      margin: -24px -24px 0px;
+      background: $white;
+      padding: 16px 32px 0;
+      border-bottom: 1px solid $grey;
+    }
+    .content-body {
+      padding-top: 24px;
+    }
   }
 }
 .sider-drawer {
@@ -50,12 +57,30 @@
     overflow: hidden;
     box-shadow: 1px 1px 0 0 #e8e8e8;
     .logo-label {
-      display: inline-block;
       vertical-align: middle;
       font-size: 20px;
       margin: 0 0 0 12px;
       font-weight: 600;
-      color: $black;
+    }
+  }
+}
+
+.sider-drawer,
+.layout {
+  &.dark {
+    .logo {
+      background-color: $black;
+      .logo-label {
+        color: $white;
+      }
+    }
+  }
+  &.light {
+    .logo {
+      background-color: $white;
+      .logo-label {
+        color: $black;
+      }
     }
   }
 }
