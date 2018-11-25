@@ -117,7 +117,7 @@ const Icons = () => (
           <div className="col-xs-12 col-sm-6">
             <i className="icon-calendar" />
             <span className="i-name">icon-calendar</span>&nbsp;
-            <span className="small i-code">0xe810</span>
+            <span className="small i-code">0xe84d</span>
           </div>
           <div className="col-xs-12 col-sm-6">
             <i className="icon-hide" />
@@ -607,11 +607,33 @@ const Icons = () => (
             <span className="i-name">icon-consultation</span>&nbsp;
             <span className="small i-code">0xe84c</span>
           </div>
-          {/* <div className="col-xs-12 col-sm-6">
-            <i className="icon-github" />
-            <span className="i-name">icon-github</span>&nbsp;
-            <span className="small i-code">0xe892</span>
-          </div> */}
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-certificate" />
+            <span className="i-name">icon-certificate</span>&nbsp;
+            <span className="small i-code">0xe84e</span>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-laptop" />
+            <span className="i-name">icon-laptop</span>&nbsp;
+            <span className="small i-code">0xe84f</span>
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-secure" />
+            <span className="i-name">icon-secure</span>&nbsp;
+            <span className="small i-code">0xe850</span>
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-timeglass" />
+            <span className="i-name">icon-timeglass</span>&nbsp;
+            <span className="small i-code">0xe851</span>
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-truck-right" />
+            <span className="i-name">icon-truck-right</span>&nbsp;
+            <span className="small i-code">0xe852</span>
+          </div>
         </div>
       </div>
     </div>
