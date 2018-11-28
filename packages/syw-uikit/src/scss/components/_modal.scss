@@ -7,6 +7,10 @@
     font-family: "fontello" !important;
     content: '\E812';
   }
+  /*hidden default component's svg icon*/
+  i.anticon {
+    display: none;
+  }
 }
 
 .ant-modal {
