@@ -45,11 +45,16 @@
   }
 
   &-arrow {
-    font-size: 20px !important;
-    margin-top: -10px;
-    &:before {
-      font-family: "fontello" !important;
-      content: "\E80D";
+   font-size: 20px !important;
+   margin-top: -10px;
+   &:before {
+     display: block;
+     font-family: "fontello" !important;
+     content: "\E80D";
+   }
+    /*hidden default component's svg icon*/
+    i.anticon {
+      display: none;
     }
   }
 }

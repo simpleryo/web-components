@@ -26,6 +26,12 @@
         line-height: 30px;
       }
     }
+
+    /*vertical center component's svg icon*/
+    i.anticon {
+      line-height: normal;
+    }
+
     &:active{
       @extend .ant-tabs-tab-active;
     }
@@ -53,12 +59,20 @@
         font-size: 18px;
         content: "\E80A";
       }
+      /*hidden default component's svg icon*/
+      i.anticon {
+        display: none;
+      }
     }
     &-next-icon {
       &:before {
         font-family: "fontello" !important;
         font-size: 18px;
         content: "\E80B";
+      }
+      /*hidden default component's svg icon*/
+      i.anticon {
+        display: none;
       }
     }
     h6 {
