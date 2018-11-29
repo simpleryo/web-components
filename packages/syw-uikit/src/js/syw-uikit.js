@@ -15,6 +15,7 @@ import Alert from "./components/Alert";
 import SignaturePad from "./components/SignaturePad";
 import PromotionCode from "./components/PromotionCode";
 import Layout from "./components/Layout";
+import SiderMenu from "./components/SiderMenu";
 
 export { default as Button } from "antd/es/button";
 export { default as Tabs } from "antd/es/tabs";
@@ -45,6 +46,7 @@ export { default as Table } from "antd/es/table";
 export { default as AntdLayout } from "antd/es/layout";
 export { default as Menu } from "antd/es/menu";
 export { default as Drawer } from "antd/es/drawer";
+export { default as Spin } from "antd/es/spin";
 
 export {
   Alert,
@@ -65,5 +67,6 @@ export {
   SignaturePad,
   CountDown,
   PromotionCode,
-  Layout
+  Layout,
+  SiderMenu
 };

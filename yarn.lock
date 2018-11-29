@@ -131,9 +131,9 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@simpleryo/react-datepicker@1.4.1-beta-2":
-  version "1.4.1-beta-2"
-  resolved "https://registry.npmjs.org/@simpleryo/react-datepicker/-/react-datepicker-1.4.1-beta-2.tgz#553ddcad0d3b3f3e9620d06d79e8799be97cd2d8"
+"@simpleryo/react-datepicker@1.4.1-beta-3":
+  version "1.4.1-beta-3"
+  resolved "https://registry.npmjs.org/@simpleryo/react-datepicker/-/react-datepicker-1.4.1-beta-3.tgz#99467755f0a412f184edfd5816d3143050daa655"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"

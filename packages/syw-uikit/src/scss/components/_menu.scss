@@ -11,4 +11,7 @@
   &.ant-menu-inline-collapsed {
     border: 0;
   }
+  .ant-menu-submenu-vertical.ant-menu-submenu-selected {
+    color: $pink;
+  }
 }
