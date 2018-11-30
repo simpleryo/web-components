@@ -39,8 +39,12 @@
   &:after {
     font-family: "fontello" !important;
     content: '\E80B';
+    position: absolute;
     right: 1px;
-    top: 7px;
+    top: 5px;
+  }
+  .ant-cascader-menu-item-expand-icon {
+    display: none;
   }
 }
 
