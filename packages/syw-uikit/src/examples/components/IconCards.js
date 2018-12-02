@@ -89,8 +89,7 @@ const IconCards = () => (
           <div className="row">
             <div className="col-xs-12 col-sm-4 col-md-4">
               <IconCard
-                iconSize="48"
-                icon="icon-user"
+                icon={<i className="icon-truck-right" />}
                 vertical="true"
                 title="中国领事馆合作伙伴"
                 description="与中国领事馆直接合作，出签更高效"
@@ -99,8 +98,7 @@ const IconCards = () => (
 
             <div className="col-xs-12 col-sm-4 col-md-4">
               <IconCard
-                iconSize="48"
-                icon="icon-write"
+                icon={<i className="icon-secure" />}
                 vertical="true"
                 title="资料加密安全管理"
                 description="采用高级加密标准，保护签证资料安全"
@@ -109,8 +107,7 @@ const IconCards = () => (
 
             <div className="col-xs-12 col-sm-4 col-md-4">
               <IconCard
-                iconSize="48"
-                icon="icon-health"
+                icon={<i className="icon-laptop" />}
                 vertical="true"
                 title="无需线下排队等待"
                 description="拥有中国领事馆直通渠道，快速便捷"
