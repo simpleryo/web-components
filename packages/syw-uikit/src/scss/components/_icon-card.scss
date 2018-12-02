@@ -102,7 +102,7 @@
     display: table;
     margin-top: inherit;
     margin-left: 15px;
-    width: calc(100% - 43px);
+    width: calc(100% - 53px);
     height: 54px;
   }
   &__detail {
@@ -119,5 +119,9 @@
   }
   .circle-icon, i, img {
     float: left;
+  }
+  i:before {
+    font-size: 38px;
+    margin: 0;
   }
 }
