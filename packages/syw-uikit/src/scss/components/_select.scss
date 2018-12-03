@@ -47,16 +47,24 @@
   &-arrow {
    font-size: 20px !important;
    margin-top: -10px;
-   &:before {
-     display: block;
-     font-family: "fontello" !important;
-     content: "\E80D";
-   }
-    /*hidden default component's svg icon*/
-    i.anticon {
-      display: none;
+    &-icon {
+      transition: transform .2s;
+      &:before {
+        display: block;
+        font-family: "fontello" !important;
+        content: "\E80D";
+      }
+      /*hidden default component's svg icon*/
+      svg {
+        display: none;
+      }
     }
   }
+}
+
+.ant-select-open .ant-select-arrow-icon {
+  transform: rotate(180deg);
+  transition: transform .3s;
 }
 
 .ant-select,
@@ -83,11 +91,9 @@
   }
 }
 
-.ant-select-open {
-  .ant-select-selection {
-    border-color: $blue;
-    box-shadow: none;
-  }
+.ant-select-open .ant-select-selection {
+  border-color: $blue;
+  box-shadow: none;
 }
 
 .ant-select-selection--multiple .ant-select-selection__choice {
