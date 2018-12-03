@@ -39,8 +39,9 @@
   &:after {
     font-family: "fontello" !important;
     content: '\E80B';
+    font-size: 10px;
     position: absolute;
-    right: 1px;
+    right: 5px;
     top: 5px;
   }
   .ant-cascader-menu-item-expand-icon {
@@ -50,12 +51,19 @@
 
 .ant-cascader-picker-arrow {
   & {
+    font-size: 20px;
+    margin-top: -15px;
     width: auto;
     height: auto;
   }
   &:before {
+    display: block;
     font-family: "fontello" !important;
     content: '\E80D';
+  }
+  /*hidden default component's svg icon*/
+  svg {
+    display: none;
   }
 }
 
