@@ -3,12 +3,13 @@
 /* ------------------------------------------------- */
 
 .ant-modal-close-x {
-  &:before {
+  i.ant-modal-close-icon:before {
+    display: block;
     font-family: "fontello" !important;
     content: '\E812';
   }
   /*hidden default component's svg icon*/
-  i.anticon {
+  svg {
     display: none;
   }
 }
@@ -49,10 +50,12 @@
         margin: 0;
       }
     }
-    &:before {
-      font-size: 25px;
-      @include responsive-to('mobile') {
-        font-size: inherit;
+    i.ant-modal-close-icon {
+      &:before {
+        font-size: 30px;
+        @include responsive-to('mobile') {
+          font-size: inherit;
+        }
       }
     }
   }
