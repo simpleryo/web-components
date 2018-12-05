@@ -30,16 +30,22 @@
         float: right;
         margin-right: 30px;
         font-weight: normal;
+        font-size: inherit;
         color: black;
         line-height: 30px;
         transform: scale(1) rotate(90deg);
-
+        transition: transform 0.24s;
+        @include responsive-to('mobile') {
+          transform: scale(0.75) rotate(90deg);
+        }
         &:before{
+          display: block;
           font-family: "fontello" !important;
           content: '\E80B';
         }
-        @include responsive-to('mobile') {
-          transform: scale(0.75) rotate(90deg);
+        /*hidden default component's svg icon*/
+        svg {
+          display: none;
         }
       }
       &[aria-expanded="true"] .arrow {
