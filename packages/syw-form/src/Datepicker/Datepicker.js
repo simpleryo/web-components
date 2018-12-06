@@ -20,11 +20,37 @@ class DatepickerField extends PureComponent {
 
   updateStateByAction = (prevValue, nextValue) => {
     const { actions, onActions = R.F } = this.props;
+    let actionsToTrigger = {};
     const load = R.pathOr({}, [FIELD_ACTION.LOAD], actions);
+    const selectActions = R.pathOr([], [FIELD_ACTION.SELECT], actions);
+    R.map(({ activeGroups, conditions, inactiveGroups }) => {
+      const yearFrom = R.pathOr(-100, ["yearFrom"], conditions);
+      const yearTo = R.pathOr(100, ["yearTo"], conditions);
+      const isInScope = moment(nextValue).isBetween(
+        moment().add(yearFrom, "year"),
+        moment().add(yearTo, "year"),
+        "day"
+      );
+      if (isInScope && activeGroups) {
+        actionsToTrigger = R.mergeDeepRight(actionsToTrigger, {
+          activeGroups
+        });
+      }
+      if (isInScope && inactiveGroups) {
+        actionsToTrigger = R.mergeDeepRight(actionsToTrigger, {
+          inactiveGroups
+        });
+      }
+    }, selectActions);
+
     if (R.not(R.isEmpty(load))) {
-      onActions(
+      actionsToTrigger = R.mergeDeepRight(
+        actionsToTrigger,
         R.mergeDeepRight(load, { autoFillFields: { prevValue, nextValue } })
       );
+    }
+    if (R.not(R.isEmpty(actionsToTrigger))) {
+      onActions(actionsToTrigger);
     }
   };
 
