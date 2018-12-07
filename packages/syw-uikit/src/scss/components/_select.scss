@@ -45,8 +45,8 @@
   }
 
   &-arrow {
-   font-size: 20px !important;
-   margin-top: -10px;
+    font-size: 20px !important;
+    margin-top: -10px;
     &-icon {
       transition: transform .2s;
       &:before {
@@ -104,14 +104,14 @@
   margin-left: 10px;
 }
 .ant-select-dropdown.ant-select-dropdown--multiple
-  .ant-select-dropdown-menu-item-selected:after,
+.ant-select-dropdown-menu-item-selected:after,
 .ant-select-dropdown.ant-select-dropdown--multiple
-  .ant-select-dropdown-menu-item-selected:hover:after {
+.ant-select-dropdown-menu-item-selected:hover:after {
   color: $blue;
 }
 
 .ant-select-dropdown.ant-select-dropdown--multiple
-  .ant-select-dropdown-menu-item:after {
+.ant-select-dropdown-menu-item:after {
   font-family: "fontello" !important;
   content: "\E828";
   font-weight: inherit;
@@ -185,12 +185,15 @@
       @include responsive-to("mobile") {
         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
       }
-      > .ant-select > .ant-select-selection:focus {
+      > .ant-select > .ant-select-selection {
         border-color: transparent;
-        box-shadow: none;
-      }
-      > .ant-select > .ant-select-selection:hover {
-        border-color: transparent;
+        &:hover {
+          border-color: transparent;
+        }
+        &:focus {
+          border-color: transparent;
+          box-shadow: none;
+        }
       }
     }
   }
