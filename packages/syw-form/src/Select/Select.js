@@ -33,6 +33,10 @@ class SelectField extends PureComponent {
 
   render() {
     const {
+      forwardRef,
+      size = "default",
+      style = { width: "100%" },
+      dropdownClassName = "",
       name,
       value,
       placeholder = "",
@@ -78,10 +82,13 @@ class SelectField extends PureComponent {
 
     return (
       <Select
+        ref={forwardRef}
+        size={size}
         name={name}
+        dropdownClassName={dropdownClassName}
         value={value}
         showSearch={showSearch}
-        style={{ width: "100%" }}
+        style={style}
         placeholder={placeholder}
         filterOption={filterOption}
         onChange={this.handleChange}
@@ -99,13 +106,11 @@ class SelectField extends PureComponent {
                   label={option.label}
                   value={option.value}
                 >
-                  <div>
-                    {option.icon && <i className={option.icon} />}
-                    {option.flag && (
-                      <i className={`flag-icon flag-icon-${option.flag}`} />
-                    )}
-                    <span>{option.label}</span>
-                  </div>
+                  {option.icon && <i className={option.icon} />}
+                  {option.flag && (
+                    <i className={`flag-icon flag-icon-${option.flag}`} />
+                  )}
+                  <span>{option.label}</span>
                 </Select.Option>
               ),
               optGroup[0].options
@@ -148,6 +153,10 @@ class SelectField extends PureComponent {
 }
 
 SelectField.propTypes = {
+  size: PropTypes.string,
+  style: PropTypes.object,
+  forwardRef: PropTypes.object,
+  dropdownClassName: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
   placeholder: PropTypes.string,
@@ -163,4 +172,6 @@ SelectField.propTypes = {
   actions: PropTypes.object
 };
 
-export default SelectField;
+export default React.forwardRef((props, ref) => (
+  <SelectField {...props} forwardRef={ref} />
+));
