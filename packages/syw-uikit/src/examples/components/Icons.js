@@ -635,6 +635,28 @@ const Icons = () => (
             <span className="small i-code">0xe852</span>
           </div>
         </div>
+        <div className="row">
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-applicant-info" />
+            <span className="i-name">icon-applicant-info</span>&nbsp;
+            <span className="small i-code">0xe810</span>
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-children-info" />
+            <span className="i-name">icon-children-info</span>&nbsp;
+            <span className="small i-code">0xe853</span>
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-partner-material" />
+            <span className="i-name">icon-partner-material</span>&nbsp;
+            <span className="small i-code">0xe854</span>
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-children-material" />
+            <span className="i-name">icon-children-material</span>&nbsp;
+            <span className="small i-code">0xe855</span>
+          </div>
+        </div>
       </div>
     </div>
   </Fragment>
