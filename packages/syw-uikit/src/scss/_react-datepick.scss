@@ -2,7 +2,9 @@
 // Stylesheet for react datepick
 /* ------------------------------------------------- */
 @import "~@simpleryo/react-datepicker/dist/react-datepicker";
-
+.react-datepicker-popper {
+  z-index: 9999;
+}
 .react-datepicker-wrapper,
 .react-datepicker__input-container {
   width: 100%;
@@ -168,7 +170,7 @@
   left: 0;
   border: none;
   width: 20px;
-  height: 41px;
+  height: 42px;
   background: $semi-light-grey;
   color: $grey;
   &:before {
@@ -181,7 +183,7 @@
   right: 0;
   border: none;
   width: 20px;
-  height: 41px;
+  height: 42px;
   background: $semi-light-grey;
   color: $grey;
   &:before {
