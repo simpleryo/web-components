@@ -81,17 +81,37 @@ class DatepickerRangeField extends PureComponent {
       locale = "en",
       dateFormat = DEFAULT_DATE_FORMAT
     } = this.props;
+    const { startDate, endDate } = this.state;
 
     const dateRangeRule = R.find(rule => rule.name === RULE_DATE_RANGE, rules);
-    const dateFrom = R.path(["conditions", "dateFrom"], dateRangeRule);
-    const dateTo = R.path(["conditions", "dateTo"], dateRangeRule);
+    const dateFrom = R.pathOr(
+      -100000,
+      ["conditions", "dateFrom"],
+      dateRangeRule
+    );
+    const dateTo = R.pathOr(100000, ["conditions", "dateTo"], dateRangeRule);
+    const dateMaxRange = R.path(["conditions", "dateMaxRange"], dateRangeRule);
 
-    const minDate = R.isNil(dateFrom) ? null : moment().add(dateFrom, "day");
-    const maxDate = R.isNil(dateTo) ? null : moment().add(dateTo, "day");
+    let startMinDate = moment().add(dateFrom, "day");
+    const startMaxDate = moment().add(dateTo, "day");
+    let endMaxDate = moment().add(dateTo, "day");
+    if (dateMaxRange) {
+      if (startDate) {
+        const maxDateForRange = moment(startDate).add(dateMaxRange, "day");
+        endMaxDate = endMaxDate.isBefore(maxDateForRange)
+          ? endMaxDate
+          : maxDateForRange;
+      }
+      if (endDate) {
+        const minDateForRange = moment(endDate).subtract(dateMaxRange, "day");
+        startMinDate = startMinDate.isAfter(minDateForRange)
+          ? startMinDate
+          : minDateForRange;
+      }
+    }
 
     const placeholderList = this.convertStringToList(placeholder);
     const labelList = this.convertStringToList(label);
-    const { startDate, endDate } = this.state;
 
     return (
       <DatePickerRange
@@ -99,8 +119,8 @@ class DatepickerRangeField extends PureComponent {
           dateFormat,
           locale,
           startDate: startDate ? moment(startDate, dateFormat) : null,
-          minDate,
-          maxDate,
+          minDate: startMinDate,
+          maxDate: startMaxDate,
           onChange: this.handleChangeStart,
           placeholderText: placeholderList[0],
           label: labelList[0]
@@ -109,7 +129,7 @@ class DatepickerRangeField extends PureComponent {
           dateFormat,
           locale,
           endDate: endDate ? moment(endDate, dateFormat) : null,
-          maxDate,
+          maxDate: endMaxDate,
           onChange: this.handleChangeEnd,
           placeholderText: placeholderList[1],
           label: labelList[1]
