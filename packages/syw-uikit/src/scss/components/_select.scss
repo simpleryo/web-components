@@ -147,10 +147,15 @@
 }
 
 /*Large select option style*/
-.ant-select-dropdown--large .ant-select-dropdown-menu-item {
-  padding: 14px 15px;
-  @include responsive-to("mobile") {
-    padding: 10px 15px !important;
+.ant-select-dropdown--large {
+  .ant-select-dropdown-menu-item {
+    padding: 14px 15px;
+    @include responsive-to("mobile") {
+      padding: 10px 15px !important;
+    }
+  }
+  .ant-select-dropdown-menu-item-group-title {
+    color: $grey;
   }
 }
 
