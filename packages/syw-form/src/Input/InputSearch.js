@@ -77,16 +77,37 @@ export default class InputSearchField extends Component {
 
   updateStateByAction = (prevValue, nextValue, override = false) => {
     const { actions, onActions } = this.props;
-    const load = R.pathOr({}, [FIELD_ACTION.LOAD], actions);
-    const select = R.pathOr({}, [FIELD_ACTION.SELECT], actions);
-    const actionConfig = R.mergeDeepRight(load, select);
+    let actionsToTrigger = R.pathOr({}, [FIELD_ACTION.LOAD], actions);
+    let selectActions = R.path([FIELD_ACTION.SELECT], actions);
+    if (R.type(selectActions) !== "Array") {
+      selectActions = selectActions ? [selectActions] : [];
+    }
+    R.map(({ conditions, activeGroups, inactiveGroups, autoFillFields }) => {
+      if (autoFillFields) {
+        actionsToTrigger = R.mergeDeepRight(actionsToTrigger, {
+          autoFillFields: { ...autoFillFields, prevValue, nextValue, override }
+        });
+      } else if (
+        R.compose(R.contains(nextValue), R.pathOr([], ["equals"]))(conditions)
+      ) {
+        actionsToTrigger = R.mergeDeepRight(actionsToTrigger, {
+          activeGroups,
+          inactiveGroups
+        });
+      } else if (
+        R.compose(R.not, R.contains(nextValue), R.pathOr([], ["notEquals"]))(
+          conditions
+        )
+      ) {
+        actionsToTrigger = R.mergeDeepRight(actionsToTrigger, {
+          activeGroups,
+          inactiveGroups
+        });
+      }
+    }, selectActions);
 
-    if (R.not(R.isEmpty(actionConfig))) {
-      onActions(
-        R.mergeDeepRight(actionConfig, {
-          autoFillFields: { prevValue, nextValue, override }
-        })
-      );
+    if (R.not(R.isEmpty(actionsToTrigger))) {
+      onActions(actionsToTrigger);
     }
   };
 
