@@ -1,3 +1,22 @@
 .markdown-container {
   display: inline-block;
+  width: 100%;
+  table {
+    border: 1px solid $semi-light-grey;
+    width: 100%;
+    > thead {
+      background-color: $semi-light-grey;
+      th {
+        padding: 16px;
+      }
+    }
+    > tbody {
+      > tr:nth-child(even) {
+        background-color: $light-grey;
+      }
+      td {
+        padding: 16px;
+      }
+    }
+  }
 }
