@@ -22,7 +22,10 @@ class DatepickerField extends PureComponent {
     const { actions, onActions = R.F } = this.props;
     let actionsToTrigger = {};
     const load = R.pathOr({}, [FIELD_ACTION.LOAD], actions);
-    const selectActions = R.pathOr([], [FIELD_ACTION.SELECT], actions);
+    let selectActions = R.path([FIELD_ACTION.SELECT], actions);
+    if (R.type(selectActions) !== "Array") {
+      selectActions = selectActions ? [selectActions] : [];
+    }
     R.map(({ activeGroups, conditions, inactiveGroups }) => {
       const yearFrom = R.pathOr(-100, ["yearFrom"], conditions);
       const yearTo = R.pathOr(100, ["yearTo"], conditions);
