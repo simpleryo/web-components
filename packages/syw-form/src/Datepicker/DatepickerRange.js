@@ -6,6 +6,7 @@ import { DatePickerRange } from "@simpleryo/syw-uikit";
 import { validateField } from "../validators";
 import { RULE_DATE_RANGE } from "../validators/rules";
 import { FIELD_ACTION } from "../Field/type";
+import FieldTheme from "../Field/FieldTheme";
 
 const DEFAULT_SEPARATOR = "~";
 const DEFAULT_DATE_FORMAT = "YYYY-MM-DD";
@@ -75,6 +76,10 @@ class DatepickerRangeField extends PureComponent {
 
   render() {
     const {
+      className,
+      description,
+      hint,
+      error,
       rules,
       label = "",
       placeholder = "",
@@ -114,32 +119,44 @@ class DatepickerRangeField extends PureComponent {
     const labelList = this.convertStringToList(label);
 
     return (
-      <DatePickerRange
-        startSettings={{
-          dateFormat,
-          locale,
-          startDate: startDate ? moment(startDate, dateFormat) : null,
-          minDate: startMinDate,
-          maxDate: startMaxDate,
-          onChange: this.handleChangeStart,
-          placeholderText: placeholderList[0],
-          label: labelList[0]
-        }}
-        endSettings={{
-          dateFormat,
-          locale,
-          endDate: endDate ? moment(endDate, dateFormat) : null,
-          maxDate: endMaxDate,
-          onChange: this.handleChangeEnd,
-          placeholderText: placeholderList[1],
-          label: labelList[1]
-        }}
-      />
+      <FieldTheme
+        className={className}
+        rules={rules}
+        description={description}
+        hint={hint}
+        error={error}
+      >
+        <DatePickerRange
+          startSettings={{
+            dateFormat,
+            locale,
+            startDate: startDate ? moment(startDate, dateFormat) : null,
+            minDate: startMinDate,
+            maxDate: startMaxDate,
+            onChange: this.handleChangeStart,
+            placeholderText: placeholderList[0],
+            label: labelList[0]
+          }}
+          endSettings={{
+            dateFormat,
+            locale,
+            endDate: endDate ? moment(endDate, dateFormat) : null,
+            maxDate: endMaxDate,
+            onChange: this.handleChangeEnd,
+            placeholderText: placeholderList[1],
+            label: labelList[1]
+          }}
+        />
+      </FieldTheme>
     );
   }
 }
 
 DatepickerRangeField.propTypes = {
+  className: PropTypes.string,
+  description: PropTypes.string,
+  hint: PropTypes.string,
+  error: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
   label: PropTypes.string,
