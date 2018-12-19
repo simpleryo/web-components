@@ -657,6 +657,13 @@ const Icons = () => (
             <span className="small i-code">0xe855</span>
           </div>
         </div>
+        <div className="row">
+          <div className="col-xs-12 col-sm-6">
+            <i className="icon-book" />
+            <span className="i-name">icon-book</span>&nbsp;
+            <span className="small i-code">0xe856</span>
+          </div>
+        </div>
       </div>
     </div>
   </Fragment>
