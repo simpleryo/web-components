@@ -34,9 +34,9 @@ const ProgressBar = () => (
       <div className="bs-example">
         <div className="row">
           <div className="col-sm-6 col-xs-12">
-            <Progress percent={30} />
-            <Progress percent={50} status="active" />
-            <Progress percent={100} />
+            <Progress strokeLinecap="square" percent={30} />
+            <Progress strokeLinecap="square" percent={50} status="active" />
+            <Progress strokeLinecap="square" percent={100} />
           </div>
         </div>
       </div>
@@ -44,11 +44,11 @@ const ProgressBar = () => (
       <Snippet language="html">
         {`import { Progress } from '@simpleryo/syw-uikit';
 <!-- Static style -->
-<Progress percent={30} />
+<Progress strokeLinecap="square" percent={30} />
 <!-- Active style -->
-<Progress percent={50} status="active" />
+<Progress strokeLinecap="square" percent={50} status="active" />
 <!-- Completed style -->
-<Progress percent={100} />`}
+<Progress strokeLinecap="square" percent={100} />`}
       </Snippet>
     </div>
 
@@ -62,9 +62,14 @@ const ProgressBar = () => (
       <div className="bs-example">
         <div className="row">
           <div className="col-sm-6 col-xs-12">
-            <Progress percent={30} showInfo={false} />
-            <Progress percent={50} status="active" showInfo={false} />
-            <Progress percent={100} showInfo={false} />
+            <Progress strokeLinecap="square" percent={30} showInfo={false} />
+            <Progress
+              strokeLinecap="square"
+              percent={50}
+              status="active"
+              showInfo={false}
+            />
+            <Progress strokeLinecap="square" percent={100} showInfo={false} />
           </div>
         </div>
       </div>
@@ -72,11 +77,11 @@ const ProgressBar = () => (
       <Snippet language="html">
         {`import { Progress } from '@simpleryo/syw-uikit';
 <!-- Static style -->
-<Progress percent={30} showInfo={false} />
+<Progress strokeLinecap="square" percent={30} showInfo={false} />
 <!-- Active style -->
-<Progress percent={50} status="active" showInfo={false} />
+<Progress strokeLinecap="square" percent={50} status="active" showInfo={false}/>
 <!-- Completed style -->
-<Progress percent={100} showInfo={false} />`}
+<Progress strokeLinecap="square" percent={100} showInfo={false}/>`}
       </Snippet>
     </div>
 
@@ -89,11 +94,30 @@ const ProgressBar = () => (
 
       <div className="bs-example">
         <div className="row">
-          <div className="col-sm-6 col-xs-12">
-            <Progress type="circle" percent={75} width={60} />
+          <div className="col-sm-4 col-xs-12">
+            <Progress
+              strokeLinecap="square"
+              type="circle"
+              percent={30}
+              width={80}
+            />
           </div>
-          <div className="col-sm-6 col-xs-12">
-            <Progress type="circle" percent={100} width={60} />
+          <div className="col-sm-4 col-xs-12">
+            <Progress
+              strokeLinecap="square"
+              type="circle"
+              percent={70}
+              width={80}
+              status="exception"
+            />
+          </div>
+          <div className="col-sm-4 col-xs-12">
+            <Progress
+              strokeLinecap="square"
+              type="circle"
+              percent={100}
+              width={80}
+            />
           </div>
         </div>
       </div>
@@ -101,9 +125,11 @@ const ProgressBar = () => (
       <Snippet language="html">
         {`import { Progress } from '@simpleryo/syw-uikit';
 <!-- Static style -->
-<Progress type="circle" percent={75} width={60} />
+<Progress strokeLinecap="square" type="circle" percent={30} width={80} />
+<!-- Error style -->
+<Progress strokeLinecap="square" type="circle" percent={70} width={80} status="exception" />
 <!-- Completed style -->
-<Progress type="circle" percent={100} width={60} />`}
+<Progress strokeLinecap="square" type="circle" percent={100} width={80} />`}
       </Snippet>
     </div>
   </Fragment>

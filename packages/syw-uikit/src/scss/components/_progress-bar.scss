@@ -32,6 +32,13 @@
     .ant-progress-text {
       width: 35px;
     }
+    // Circle style
+    &.ant-progress-circle.ant-progress-show-info {
+      .ant-progress-text {
+        font-family: inherit;
+        width: 100%;
+      }
+    }
   }
 
   .ant-progress-status-active .ant-progress-bg:before {
@@ -39,9 +46,8 @@
   }
 
   // Circle style
-  .ant-progress-circle .ant-progress-text {
-    font-family: inherit;
-    width: 100%;
+  &-circle .ant-progress-text {
+    color: $black;
   }
 
   .ant-progress-circle-path {
@@ -67,23 +73,19 @@
   }
 
   // icon font update
-  .anticon-check {
-    &:before {
-      font-family: "fontello" !important;
-      content: "\E828";
-    }
-    &-circle {
-      &:before {
-        font-family: "fontello" !important;
-        content: "\E817";
-      }
+  .anticon {
+    svg {
+      display: none;
     }
   }
-
-  .anticon-cross-circle {
-    &:before {
-      font-family: "fontello" !important;
-      content: "\E88D";
-    }
+  .anticon-check:before {
+    display: block;
+    font-family: "fontello" !important;
+    content: '\E828';
+  }
+  .anticon-close:before {
+    display: block;
+    font-family: "fontello" !important;
+    content: '\E812';
   }
 }
