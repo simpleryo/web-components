@@ -18,6 +18,7 @@ import Select from "./Select/Select";
 import Cascader from "./Cascader/Cascader";
 import SMSCode from "./SMSCode/SMSCode";
 import UploadFiles from "./UploadFiles/UploadFiles";
+import DatepickerRange from "./Datepicker/DatepickerRange";
 
 const createField = WrappedComponent => {
   class CreateField extends PureComponent {
@@ -221,6 +222,18 @@ const createField = WrappedComponent => {
           FieldComponent = UploadFiles;
           fieldParams = {
             ...defaultFieldConfig,
+            label,
+            hint,
+            error,
+            ...restProps
+          };
+          themeParams = { description };
+          break;
+        case FIELD_TYPE.DATEPICKER_RANGE:
+          FieldComponent = DatepickerRange;
+          fieldParams = {
+            ...defaultFieldConfig,
+            placeholder,
             label,
             hint,
             error,
