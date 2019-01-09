@@ -12,29 +12,26 @@ const DEFAULT_SEPARATOR = "~";
 const DEFAULT_DATE_FORMAT = "YYYY-MM-DD";
 
 class DatepickerRangeField extends PureComponent {
-  constructor(props) {
-    super(props);
-    const { value, separator = DEFAULT_SEPARATOR } = props;
-    const [startDate, endDate] = value ? R.split(separator, value) : [];
-
-    this.state = {
-      startDate,
-      endDate
-    };
-  }
-
   handleChangeStart = date => {
-    const { dateFormat = DEFAULT_DATE_FORMAT } = this.props;
+    const {
+      value,
+      separator = DEFAULT_SEPARATOR,
+      dateFormat = DEFAULT_DATE_FORMAT
+    } = this.props;
     const startDate = R.isNil(date) ? date : date.format(dateFormat);
-    this.setState({ startDate });
-    this.updateDateRange([startDate, this.state.endDate]);
+    const oriEndDate = R.compose(R.last, R.split(separator))(value || "");
+    this.updateDateRange([startDate, oriEndDate]);
   };
 
   handleChangeEnd = date => {
-    const { dateFormat = DEFAULT_DATE_FORMAT } = this.props;
+    const {
+      value,
+      separator = DEFAULT_SEPARATOR,
+      dateFormat = DEFAULT_DATE_FORMAT
+    } = this.props;
     const endDate = R.isNil(date) ? date : date.format(dateFormat);
-    this.setState({ endDate });
-    this.updateDateRange([this.state.startDate, endDate]);
+    const oriStartDate = R.compose(R.head, R.split(separator))(value || "");
+    this.updateDateRange([oriStartDate, endDate]);
   };
 
   updateDateRange = dateRangeList => {
@@ -46,15 +43,15 @@ class DatepickerRangeField extends PureComponent {
       onChange = R.F
     } = this.props;
     const joinedVal = R.join(separator, dateRangeList);
-    const value = joinedVal !== separator ? joinedVal : "";
+    const newValue = joinedVal !== separator ? joinedVal : "";
     const error = R.reduce(
       (acc, cur) => acc || validateField(rules, cur),
       null,
       dateRangeList
     );
 
-    onChange(name, value, error);
-    this.updateStateByAction(prevValue, value);
+    onChange(name, newValue, error);
+    this.updateStateByAction(prevValue, newValue);
   };
 
   updateStateByAction = (prevValue, nextValue) => {
@@ -86,7 +83,8 @@ class DatepickerRangeField extends PureComponent {
       locale = "en",
       dateFormat = DEFAULT_DATE_FORMAT
     } = this.props;
-    const { startDate, endDate } = this.state;
+    const { value, separator = DEFAULT_SEPARATOR } = this.props;
+    const [startDate, endDate] = value ? R.split(separator, value) : [];
 
     const dateRangeRule = R.find(rule => rule.name === RULE_DATE_RANGE, rules);
     const dateFrom = R.pathOr(
