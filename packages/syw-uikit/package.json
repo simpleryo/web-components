@@ -1,6 +1,6 @@
 {
   "name": "@simpleryo/syw-uikit",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
   "main": "lib/syw-uikit.js",
   "module": "src/js/syw-uikit.js",
@@ -24,6 +24,7 @@
     "antd": "3.10.7",
     "bootstrap-sass": "^3.3.7",
     "@simpleryo/react-datepicker": "1.4.1-beta-3",
+    "@simpleryo/syw-utils": "*",
     "react-markdown": "3.3.0",
     "react-slick": "^0.20.0",
     "react-syntax-highlighter": "^5.7.0",
