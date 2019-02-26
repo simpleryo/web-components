@@ -151,6 +151,7 @@ class ScanPhoto extends PureComponent {
           <span>{label}</span>
           <input
             type="file"
+            value="" // make sure the same file could be updated again
             className="upload-file__input"
             onChange={this.handleFileChange}
           />
